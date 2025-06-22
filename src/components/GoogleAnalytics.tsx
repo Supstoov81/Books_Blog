@@ -1,6 +1,26 @@
+'use client';
+
+import { useEffect } from 'react';
 import Script from 'next/script';
 
+// Extend Window interface for Google Analytics
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
+  }
+}
+
 export default function GoogleAnalytics() {
+  useEffect(() => {
+    // Ensure gtag is available globally
+    if (typeof window !== 'undefined') {
+      window.gtag = window.gtag || function (...args: unknown[]) {
+        (window.dataLayer = window.dataLayer || []).push(args);
+      };
+    }
+  }, []);
+
   return (
     <>
       <Script
