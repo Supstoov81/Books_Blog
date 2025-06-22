@@ -20,6 +20,7 @@ export default function Home() {
   const [expandedBookId, setExpandedBookId] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState<'books' | 'about' | 'contact'>('books');
 
+  // Updated: Latest version with Google Analytics tracking
   const books: Book[] = [
     {
       id: 1,
