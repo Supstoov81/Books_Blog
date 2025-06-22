@@ -33,7 +33,7 @@ export default function Home() {
         'Core Principles': [
           'You do not rise to the level of your goals, you fall to the level of your systems.',
           'Small habits make a big difference.',
-          'Change is not an event, it&apos;s a process.',
+          'Change is not an event, it\'s a process.',
           'The most effective way to change your habits is to focus not on what you want to achieve, but on who you wish to become.',
           'Every action you take is a vote for the type of person you wish to become.',
           'The best way to change your habits is to focus not on what you want to achieve, but on who you want to become.',
@@ -79,7 +79,7 @@ export default function Home() {
       quotes: {
         'Core Principles': [
           'Power is the ability to influence others and get what you want.',
-          'The best way to win is to never play the other person&apos;s game.',
+          'The best way to win is to never play the other person\'s game.',
           'Power is a matter of perception.',
           'The most important skill in gaining power is the ability to master your emotions.',
           'Power is not what you have, but what others think you have.',
@@ -128,7 +128,7 @@ export default function Home() {
           'Life is essentially an endless series of problems. The solution to one problem is merely the creation of another.',
           'Happiness comes from solving problems.',
           'Unhealthy values create unhealthy problems.',
-          'The key to a good life is not giving a f*ck about more; it&apos;s giving a f*ck about less, giving a f*ck about only what is true and immediate and important.',
+          'The key to a good life is not giving a f*ck about more; it\'s giving a f*ck about less, giving a f*ck about only what is true and immediate and important.',
           'The desire for more positive experience is itself a negative experience.',
           'The acceptance of negative experience is itself a positive experience.',
           'The more you try to be certain about something, the more uncertain and insecure you will feel.',
@@ -137,7 +137,7 @@ export default function Home() {
           'The more you try to be right, the more you will feel wrong.'
         ],
         'Personal Responsibility': [
-          'You are responsible for everything in your life, even if it&apos;s not your fault.',
+          'You are responsible for everything in your life, even if it\'s not your fault.',
           'Freedom comes from accepting responsibility.',
           'The power to choose is the power to change.',
           'The more you accept responsibility for your life, the more power you have to change it.',
@@ -150,7 +150,7 @@ export default function Home() {
         ],
         'Authentic Living': [
           'Truth is more important than comfort.',
-          'Being authentic means accepting reality, even when it&apos;s painful.',
+          'Being authentic means accepting reality, even when it\'s painful.',
           'Happiness requires honesty with yourself.',
           'Personal growth comes from accepting our limitations.',
           'The more you try to be certain about something, the more uncertain and insecure you will feel.',
