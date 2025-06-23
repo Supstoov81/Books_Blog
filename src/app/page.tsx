@@ -30,7 +30,7 @@ export default function Home() {
       coverImage: 'https://m.media-amazon.com/images/I/81wgcld4wxL._AC_UF1000,1000_QL80_.jpg',
       rating: 5,
       description: 'A practical guide to creating good habits and breaking bad ones. An essential book about behavior change.',
-      amazonLink: 'https://www.amazon.com/dp/0735211299',
+      amazonLink: 'https://www.amazon.com/dp/0735211299/?tag=moncodeaff-20',
       quotes: {
         'Core Principles': [
           'You do not rise to the level of your goals, you fall to the level of your systems.',
