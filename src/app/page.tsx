@@ -265,7 +265,7 @@ export default function Home() {
       coverImage: '/The-book-of-pook.jpg',
       rating: 5,
       description: 'A collection of wisdom and insights about life, relationships, and personal development. A book that challenges conventional thinking and offers practical advice for men.',
-      amazonLink: 'https://www.amazon.com/dp/B08N5WRWNW',
+      amazonLink: '',
       quotes: {
         'Life Philosophy': [
           'Life is not about finding yourself, it\'s about creating yourself.',
@@ -394,18 +394,20 @@ export default function Home() {
                       ))}
                     </div>
                     <p className="text-gray-700 mb-4">{book.description}</p>
-                    <a
-                      href={book.amazonLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title={`Buy ${book.title} on Amazon`}
-                      className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors z-10 relative"
-                    >
-                      Buy on Amazon
-                    </a>
+                    {book.amazonLink && (
+                      <a
+                        href={book.amazonLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={`Buy ${book.title} on Amazon`}
+                        className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors z-10 relative"
+                      >
+                        Buy on Amazon
+                      </a>
+                    )}
                     <button
                       onClick={() => toggleQuotes(book.id)}
-                      className="ml-4 inline-block bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition-colors"
+                      className={`${book.amazonLink ? 'ml-4' : ''} inline-block bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition-colors`}
                     >
                       {expandedBookId === book.id ? 'Hide Quotes' : 'Show Quotes'}
                     </button>
