@@ -257,6 +257,53 @@ export default function Home() {
           'The richest life is one filled with meaningful experiences.'
         ]
       }
+    },
+    {
+      id: 6,
+      title: 'The Book of Pook',
+      author: 'Pook',
+      coverImage: '/The-book-of-pook.jpg',
+      rating: 5,
+      description: 'A collection of wisdom and insights about life, relationships, and personal development. A book that challenges conventional thinking and offers practical advice for men.',
+      amazonLink: 'https://www.amazon.com/dp/B08N5WRWNW/?tag=moncodeaff-20',
+      quotes: {
+        'Life Philosophy': [
+          'Life is not about finding yourself, it\'s about creating yourself.',
+          'The only way to get what you want is to deserve what you want.',
+          'Success is not final, failure is not fatal: it is the courage to continue that counts.',
+          'The best revenge is massive success.',
+          'Life is what happens to you while you\'re busy making other plans.',
+          'The only limit to our realization of tomorrow is our doubts of today.',
+          'The future belongs to those who believe in the beauty of their dreams.',
+          'Life is either a daring adventure or nothing at all.',
+          'The only person you are destined to become is the person you decide to be.',
+          'Life is not measured by the number of breaths we take, but by the moments that take our breath away.'
+        ],
+        'Relationships & Dating': [
+          'A woman\'s love is not given, it is earned.',
+          'The key to success with women is to become the man that women want to be with.',
+          'Confidence is not thinking you are better than anyone else, it\'s knowing you don\'t have to be.',
+          'The most attractive quality in a man is his purpose and direction in life.',
+          'Women are attracted to men who have their own lives and don\'t revolve around them.',
+          'The best way to get over someone is to get under someone else.',
+          'Love is not about finding the right person, but creating the right relationship.',
+          'The strongest relationships are built on mutual respect and independence.',
+          'A real man doesn\'t chase women, he attracts them.',
+          'The best relationships are those where both people are better together than apart.'
+        ],
+        'Personal Development': [
+          'The only way to grow is to step outside your comfort zone.',
+          'Your attitude determines your altitude.',
+          'The difference between the impossible and the possible lies in determination.',
+          'Success is walking from failure to failure with no loss of enthusiasm.',
+          'The only person you should try to be better than is the person you were yesterday.',
+          'Your time is limited, don\'t waste it living someone else\'s life.',
+          'The best investment you can make is in yourself.',
+          'The only way to achieve the impossible is to believe it is possible.',
+          'Your life does not get better by chance, it gets better by change.',
+          'The only limit to your impact is your imagination and commitment.'
+        ]
+      }
     }
   ];
 
