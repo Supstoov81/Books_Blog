@@ -1,3 +1,4 @@
+// Trigger redeploy: minor change
 'use client';
 
 import { useState } from 'react';
