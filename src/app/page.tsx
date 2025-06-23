@@ -168,7 +168,7 @@ export default function Home() {
       id: 4,
       title: "Can't Hurt Me",
       author: 'David Goggins',
-      coverImage: 'https://m.media-amazon.com/images/I/81wwu1T6o6L._AC_UF1000,1000_QL80_.jpg',
+      coverImage: 'https://m.media-amazon.com/images/I/71W--kH8VwL._AC_UF1000,1000_QL80_.jpg',
       rating: 5,
       description: "David Goggins, ancien Navy SEAL, partage son parcours hors du commun et ses méthodes pour repousser les limites mentales et physiques. Un livre sur la résilience, la discipline et la transformation personnelle.",
       amazonLink: 'https://www.amazon.fr/dp/1544512287/?tag=moncodeaff',
