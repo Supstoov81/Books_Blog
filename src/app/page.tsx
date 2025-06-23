@@ -166,48 +166,48 @@ export default function Home() {
     },
     {
       id: 4,
-      title: 'Die with Zero',
-      author: 'Bill Perkins',
-      coverImage: 'https://m.media-amazon.com/images/I/81QKQ9mwV7L._AC_UF1000,1000_QL80_.jpg',
+      title: "Can't Hurt Me",
+      author: 'David Goggins',
+      coverImage: 'https://m.media-amazon.com/images/I/81wwu1T6o6L._AC_UF1000,1000_QL80_.jpg',
       rating: 5,
-      description: 'A revolutionary guide to optimizing your life by spending your money and time wisely. Learn how to maximize your life experiences and die with zero regrets.',
-      amazonLink: 'https://www.amazon.fr/dp/0358099765/?tag=moncodeaff',
+      description: "David Goggins, ancien Navy SEAL, partage son parcours hors du commun et ses méthodes pour repousser les limites mentales et physiques. Un livre sur la résilience, la discipline et la transformation personnelle.",
+      amazonLink: 'https://www.amazon.fr/dp/1544512287/?tag=moncodeaff',
       quotes: {
-        'Life Optimization': [
-          'The goal is not to die with the most money, but to die with the most life experiences.',
-          'You can\'t take it with you, so spend it while you can enjoy it.',
-          'Life is not about accumulating wealth, it\'s about accumulating experiences.',
-          'The best time to spend money is when you can still enjoy it.',
-          'Don\'t wait until you\'re too old to enjoy your wealth.',
-          'Money is a tool for living, not a goal in itself.',
-          'The richest person is not the one who has the most, but the one who needs the least.',
-          'Life experiences compound over time, just like money.',
-          'The earlier you start spending on experiences, the more value you get.',
-          'Your time and energy are your most valuable assets.'
+        'Mental Toughness': [
+          "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
+          "The mind is the most powerful weapon we have.",
+          "You have to build calluses on your brain just like how you build calluses on your hands.",
+          "Most people who are criticizing and judging haven't even tried what you failed at.",
+          "Suffering is a test. That's all it is. Suffering is the true test of life.",
+          "If you can get through doing things that you hate to do, on the other side is greatness.",
+          "The only way you gain mental toughness is to do things you're not happy doing.",
+          "You are stopping you, you are giving up instead of getting hard.",
+          "You have to develop a calloused mind.",
+          "The most important conversations you'll ever have are the ones you'll have with yourself."
         ],
-        'Timing and Planning': [
-          'The key is to spend your money at the right time in your life.',
-          'Don\'t save so much that you can\'t enjoy life now.',
-          'Balance saving for the future with living in the present.',
-          'The best time to travel is when you\'re young and healthy.',
-          'Don\'t postpone happiness until retirement.',
-          'Life is unpredictable, so enjoy it while you can.',
-          'The perfect time to start living is now.',
-          'Don\'t let fear of the future prevent you from living today.',
-          'Plan for the future, but don\'t forget to live in the present.',
-          'The best investment you can make is in your own happiness.'
+        'Overcoming Limits': [
+          "When you think you're done, you're only at 40% of your body's capability.",
+          "Don't stop when you're tired. Stop when you're done.",
+          "Be more than motivated, be more than driven, become literally obsessed to the point where people think you're f*cking nuts.",
+          "Greatness pulls mediocrity into the mud. Get out there and get after it.",
+          "We all have the ability to come from nothing to something.",
+          "You have to be willing to go to war with yourself and create a whole new identity.",
+          "The only thing more contagious than a good attitude is a bad one.",
+          "You are in control of your own mind.",
+          "If you want to get better, do the things that no-one else wants to do.",
+          "Don't let your mind hold you back."
         ],
-        'Mindset and Philosophy': [
-          'Happiness comes from experiences, not possessions.',
-          'The purpose of money is to buy freedom and experiences.',
-          'Live life on your own terms, not society\'s expectations.',
-          'Don\'t let money control your life choices.',
-          'The goal is to die with zero regrets, not zero dollars.',
-          'Life is too short to waste on things that don\'t matter.',
-          'Focus on what brings you joy, not what brings you status.',
-          'The best life is one well-lived, not one well-saved.',
-          'Don\'t sacrifice your present happiness for future security.',
-          'The richest life is one filled with meaningful experiences.'
+        'Accountability & Discipline': [
+          "Tell yourself the truth! That you've wasted enough time, and that you have other dreams that will take courage to realize.",
+          "We live in a world where mediocrity is often rewarded. Stand out.",
+          "You must own everything in your world. There is no one else to blame.",
+          "Motivation is crap. Motivation comes and goes. When you're driven, whatever is in front of you will get destroyed.",
+          "The accountability mirror is where you tell yourself the truth.",
+          "Discipline is the root of all good qualities.",
+          "Every day, do something that makes you uncomfortable.",
+          "You have to be willing to work for what you want.",
+          "Be uncommon amongst uncommon people.",
+          "Success is based on your willingness to work your ass off no matter what obstacles are in your way."
         ]
       }
     }
