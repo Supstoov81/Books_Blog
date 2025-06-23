@@ -265,7 +265,7 @@ export default function Home() {
       coverImage: '/The-book-of-pook.jpg',
       rating: 5,
       description: 'A collection of wisdom and insights about life, relationships, and personal development. A book that challenges conventional thinking and offers practical advice for men.',
-      amazonLink: 'https://www.amazon.com/dp/B08N5WRWNW/?tag=moncodeaff-20',
+      amazonLink: 'https://www.amazon.com/dp/B08N5WRWNW',
       quotes: {
         'Life Philosophy': [
           'Life is not about finding yourself, it\'s about creating yourself.',
