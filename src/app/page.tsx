@@ -77,7 +77,7 @@ export default function Home() {
       coverImage: 'https://m.media-amazon.com/images/I/71aG+xDKSYL._AC_UF1000,1000_QL80_.jpg',
       rating: 5,
       description: 'A book about the strategies and principles of power and influence.',
-      amazonLink: 'https://www.amazon.fr/dp/0143111427/?tag=moncodeaff',
+      amazonLink: 'https://www.amazon.fr/dp/1861972784/?tag=moncodeaff',
       quotes: {
         'Core Principles': [
           'Power is the ability to influence others and get what you want.',
