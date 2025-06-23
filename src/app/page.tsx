@@ -266,13 +266,23 @@ export default function Home() {
               <div key={book.id} className="bg-white shadow rounded-lg p-6">
                 <div className="flex flex-col md:flex-row gap-6">
                   <div className="flex-shrink-0">
-                    <Image
-                      src={book.coverImage}
-                      alt={`${book.title} cover`}
-                      width={192}
-                      height={288}
-                      className="w-48 h-72 object-cover rounded-lg shadow-md"
-                    />
+                    {book.title === "Can't Hurt Me" ? (
+                      <img
+                        src={book.coverImage}
+                        alt={`${book.title} cover`}
+                        width={192}
+                        height={288}
+                        className="w-48 h-72 object-cover rounded-lg shadow-md"
+                      />
+                    ) : (
+                      <Image
+                        src={book.coverImage}
+                        alt={`${book.title} cover`}
+                        width={192}
+                        height={288}
+                        className="w-48 h-72 object-cover rounded-lg shadow-md"
+                      />
+                    )}
                   </div>
                   <div className="flex-grow">
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">{book.title}</h2>
