@@ -262,7 +262,7 @@ export default function Home() {
       id: 6,
       title: 'Rich Dad Poor Dad',
       author: 'Robert Kiyosaki',
-      coverImage: '/rich-dad-poor-dad.jpg',
+      coverImage: '/Rich-dad-poor-dad.jpg',
       rating: 5,
       description: 'A personal finance classic that teaches the difference between working for money and having money work for you. Learn about assets, liabilities, and building wealth through financial education.',
       amazonLink: 'https://www.amazon.com/dp/1612680194/?tag=moncodeaff-20',
