@@ -30,7 +30,7 @@ export default function Home() {
       coverImage: 'https://m.media-amazon.com/images/I/81wgcld4wxL._AC_UF1000,1000_QL80_.jpg',
       rating: 5,
       description: 'A practical guide to creating good habits and breaking bad ones. An essential book about behavior change.',
-      amazonLink: 'https://www.amazon.fr/dp/1847941834/?tag=moncodeaff',
+      amazonLink: 'https://www.amazon.com/dp/1847941834/?tag=moncodeaff',
       quotes: {
         'Core Principles': [
           'You do not rise to the level of your goals, you fall to the level of your systems.',
@@ -77,7 +77,7 @@ export default function Home() {
       coverImage: 'https://m.media-amazon.com/images/I/71aG+xDKSYL._AC_UF1000,1000_QL80_.jpg',
       rating: 5,
       description: 'A book about the strategies and principles of power and influence.',
-      amazonLink: 'https://www.amazon.fr/dp/1861972784/?tag=moncodeaff',
+      amazonLink: 'https://www.amazon.com/dp/1861972784/?tag=moncodeaff',
       quotes: {
         'Core Principles': [
           'Power is the ability to influence others and get what you want.',
@@ -124,7 +124,7 @@ export default function Home() {
       coverImage: 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_UF1000,1000_QL80_.jpg',
       rating: 5,
       description: 'A counterintuitive approach to living a good life. A book that challenges conventional wisdom about happiness and success.',
-      amazonLink: 'https://www.amazon.fr/dp/0062457713/?tag=moncodeaff',
+      amazonLink: 'https://www.amazon.com/dp/0062457713/?tag=moncodeaff',
       quotes: {
         'Core Values': [
           'Life is essentially an endless series of problems. The solution to one problem is merely the creation of another.',
@@ -171,7 +171,7 @@ export default function Home() {
       coverImage: '/cant-hurt-me.jpg',
       rating: 5,
       description: "David Goggins, ancien Navy SEAL, partage son parcours hors du commun et ses méthodes pour repousser les limites mentales et physiques. Un livre sur la résilience, la discipline et la transformation personnelle.",
-      amazonLink: 'https://www.amazon.fr/dp/1544512287/?tag=moncodeaff',
+      amazonLink: 'https://www.amazon.com/dp/1544512287/?tag=moncodeaff',
       quotes: {
         'Mental Toughness': [
           "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
