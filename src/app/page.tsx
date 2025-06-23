@@ -1,4 +1,4 @@
-// Trigger redeploy: minor change
+// Trigger redeploy: fix chunk loading issue
 'use client';
 
 import { useState } from 'react';
