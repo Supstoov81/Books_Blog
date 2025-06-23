@@ -210,6 +210,53 @@ export default function Home() {
           "Success is based on your willingness to work your ass off no matter what obstacles are in your way."
         ]
       }
+    },
+    {
+      id: 5,
+      title: 'Die with Zero',
+      author: 'Bill Perkins',
+      coverImage: '/Die-with-zero.jpg',
+      rating: 5,
+      description: 'A revolutionary guide to optimizing your life by spending your money and time wisely. Learn how to maximize your life experiences and die with zero regrets.',
+      amazonLink: 'https://www.amazon.com/dp/0358099765/?tag=moncodeaff-20',
+      quotes: {
+        'Life Optimization': [
+          'The goal is not to die with the most money, but to die with the most life experiences.',
+          'You can\'t take it with you, so spend it while you can enjoy it.',
+          'Life is not about accumulating wealth, it\'s about accumulating experiences.',
+          'The best time to spend money is when you can still enjoy it.',
+          'Don\'t wait until you\'re too old to enjoy your wealth.',
+          'Money is a tool for living, not a goal in itself.',
+          'The richest person is not the one who has the most, but the one who needs the least.',
+          'Life experiences compound over time, just like money.',
+          'The earlier you start spending on experiences, the more value you get.',
+          'Your time and energy are your most valuable assets.'
+        ],
+        'Timing and Planning': [
+          'The key is to spend your money at the right time in your life.',
+          'Don\'t save so much that you can\'t enjoy life now.',
+          'Balance saving for the future with living in the present.',
+          'The best time to travel is when you\'re young and healthy.',
+          'Don\'t postpone happiness until retirement.',
+          'Life is unpredictable, so enjoy it while you can.',
+          'The perfect time to start living is now.',
+          'Don\'t let fear of the future prevent you from living today.',
+          'Plan for the future, but don\'t forget to live in the present.',
+          'The best investment you can make is in your own happiness.'
+        ],
+        'Mindset and Philosophy': [
+          'Happiness comes from experiences, not possessions.',
+          'The purpose of money is to buy freedom and experiences.',
+          'Live life on your own terms, not society\'s expectations.',
+          'Don\'t let money control your life choices.',
+          'The goal is to die with zero regrets, not zero dollars.',
+          'Life is too short to waste on things that don\'t matter.',
+          'Focus on what brings you joy, not what brings you status.',
+          'The best life is one well-lived, not one well-saved.',
+          'Don\'t sacrifice your present happiness for future security.',
+          'The richest life is one filled with meaningful experiences.'
+        ]
+      }
     }
   ];
 
