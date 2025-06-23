@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Book Blog - Personal Development Books & Quotes",
-  description: "Discover the best personal development books with curated quotes and insights. Explore Atomic Habits, Power, and The Subtle Art of Not Giving a F*ck.",
-  keywords: "books, personal development, quotes, Atomic Habits, Power, Mark Manson, James Clear, Robert Greene",
-  authors: [{ name: "Book Blog" }],
+  title: "Books Quotes – Personal Development Book Quotes & Summaries",
+  description: "Explore curated personal development book quotes and summaries from bestsellers like Atomic Habits, Power, Rich Dad Poor Dad, and more. Transform your mindset with actionable insights from top authors.",
+  keywords: "personal development books, book quotes, Atomic Habits, Power, Rich Dad Poor Dad, Can't Hurt Me, Die with Zero, Mark Manson, James Clear, Robert Greene, David Goggins, Bill Perkins, Robert Kiyosaki, self-improvement, motivation, success quotes",
+  authors: [{ name: "Books Quotes" }],
   openGraph: {
-    title: "Book Blog - Personal Development Books & Quotes",
-    description: "Discover the best personal development books with curated quotes and insights.",
+    title: "Books Quotes – Personal Development Book Quotes & Summaries",
+    description: "Explore curated personal development book quotes and summaries from bestsellers. Transform your mindset with actionable insights from top authors.",
     type: "website",
   },
 };
