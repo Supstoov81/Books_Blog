@@ -19,10 +19,17 @@ export const metadata: Metadata = {
   description: "Explore curated personal development book quotes and summaries from bestsellers like Atomic Habits, Power, Rich Dad Poor Dad, and more. Transform your mindset with actionable insights from top authors.",
   keywords: "personal development books, book quotes, Atomic Habits, Power, Rich Dad Poor Dad, Can't Hurt Me, Die with Zero, Mark Manson, James Clear, Robert Greene, David Goggins, Bill Perkins, Robert Kiyosaki, self-improvement, motivation, success quotes",
   authors: [{ name: "Books Quotes" }],
+  robots: "index, follow",
   openGraph: {
     title: "Books Quotes – Personal Development Book Quotes & Summaries",
     description: "Explore curated personal development book quotes and summaries from bestsellers. Transform your mindset with actionable insights from top authors.",
     type: "website",
+    url: "https://books-quotes.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Books Quotes – Personal Development Book Quotes & Summaries",
+    description: "Explore curated personal development book quotes and summaries from bestsellers.",
   },
 };
 
