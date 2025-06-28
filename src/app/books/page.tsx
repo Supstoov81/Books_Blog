@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default async function BooksList() {
   const books = await prisma.book.findMany({
@@ -14,7 +15,7 @@ export default async function BooksList() {
           <li key={book.id} className="border rounded-lg p-4 bg-white shadow">
             <Link href={`/books/${book.id}`}>
               <div className="flex items-center space-x-4">
-                <img src={book.coverImage} alt={book.title} className="w-20 h-28 object-cover rounded" />
+                <Image src={book.coverImage} alt={book.title} width={80} height={112} className="object-cover rounded" />
                 <div>
                   <h2 className="text-xl font-semibold">{book.title}</h2>
                   <p className="text-gray-600">par {book.author}</p>

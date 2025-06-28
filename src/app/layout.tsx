@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import GoogleAnalyticsHead from "@/components/GoogleAnalyticsHead";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -47,8 +48,8 @@ export default function RootLayout({
         {/* Menu principal */}
         <nav className="bg-white shadow mb-6">
           <div className="max-w-3xl mx-auto px-4 py-3 flex items-center space-x-6">
-            <a href="/" className="text-lg font-bold text-blue-700 hover:underline">Accueil</a>
-            <a href="/books" className="text-lg font-semibold text-gray-700 hover:underline">Livres</a>
+            <Link href="/" className="text-lg font-bold text-blue-700 hover:underline">Accueil</Link>
+            <Link href="/books" className="text-lg font-semibold text-gray-700 hover:underline">Livres</Link>
           </div>
         </nav>
         {children}
