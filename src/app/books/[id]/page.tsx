@@ -2,7 +2,11 @@ import { prisma } from '@/lib/prisma';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
-export default async function BookPage({ params }: { params: { id: string } }) {
+interface BookPageProps {
+  params: { id: string };
+}
+
+export default async function Page({ params }: BookPageProps) {
   const book = await prisma.book.findUnique({
     where: { id: Number(params.id) },
     include: { quotes: true },
