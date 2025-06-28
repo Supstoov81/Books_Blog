@@ -44,6 +44,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <GoogleAnalyticsHead />
+        {/* Menu principal */}
+        <nav className="bg-white shadow mb-6">
+          <div className="max-w-3xl mx-auto px-4 py-3 flex items-center space-x-6">
+            <a href="/" className="text-lg font-bold text-blue-700 hover:underline">Accueil</a>
+            <a href="/books" className="text-lg font-semibold text-gray-700 hover:underline">Livres</a>
+          </div>
+        </nav>
         {children}
         <Analytics />
       </body>
