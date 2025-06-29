@@ -46,11 +46,10 @@ export default function RootLayout({
       >
         <GoogleAnalyticsHead />
         {/* Menu principal */}
-        <nav className="bg-white shadow mb-6">
-          <div className="max-w-3xl mx-auto px-4 py-3 flex items-center space-x-6">
-            <Link href="/" className="text-lg font-bold text-blue-700 hover:underline">Home</Link>
-            <Link href="/books" className="text-lg font-semibold text-gray-700 hover:underline">Books</Link>
-          </div>
+        <nav className="flex space-x-6">
+          <Link href="/" className="text-lg font-bold text-blue-700 hover:underline">Home</Link>
+          <Link href="#about" className="text-lg font-semibold text-gray-700 hover:underline">About</Link>
+          <Link href="#contact" className="text-lg font-semibold text-gray-700 hover:underline">Contact</Link>
         </nav>
         {children}
         <Analytics />

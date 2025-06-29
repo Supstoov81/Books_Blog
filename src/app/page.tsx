@@ -15,11 +15,13 @@ interface Book {
   quotes: {
     [key: string]: string[];
   };
+  tips: string[];
 }
 
 export default function Home() {
   const [expandedBookId, setExpandedBookId] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState<'books' | 'about' | 'contact'>('books');
+  const [showTips, setShowTips] = useState<number | null>(null);
 
   // Updated: Latest version with Google Analytics tracking
   const books: Book[] = [
@@ -31,6 +33,18 @@ export default function Home() {
       rating: 5,
       description: 'A practical guide to creating good habits and breaking bad ones. An essential book about behavior change.',
       amazonLink: 'https://www.amazon.com/dp/0735211299/?tag=moncodeaff-20',
+      tips: [
+        'Start with the 2-minute rule: Make new habits so small they take less than 2 minutes to complete',
+        'Use habit stacking: Link new habits to existing ones (e.g., "After I brush my teeth, I will read for 10 minutes")',
+        'Make good habits obvious: Place visual cues in your environment (put gym clothes next to your bed)',
+        'Make bad habits invisible: Remove triggers from your environment (hide your phone in another room)',
+        'Use implementation intentions: Plan exactly when and where you will perform your habit',
+        'Track your habits: Use a habit tracker to visualize your progress and maintain motivation',
+        'Never miss twice: If you miss a habit, get back on track immediately the next day',
+        'Focus on identity change: Ask yourself "What would a [healthy person/reader/athlete] do?"',
+        'Use temptation bundling: Pair something you want to do with something you need to do',
+        'Make habits satisfying: Add immediate rewards to reinforce good behavior'
+      ],
       quotes: {
         'Core Principles': [
           'You do not rise to the level of your goals, you fall to the level of your systems.',
@@ -78,6 +92,18 @@ export default function Home() {
       rating: 5,
       description: 'A book about the strategies and principles of power and influence.',
       amazonLink: 'https://www.amazon.com/dp/1861972784/?tag=moncodeaff',
+      tips: [
+        'Master your emotions: Never show anger or frustration in professional settings',
+        'Control information: Be strategic about what you reveal and what you keep private',
+        'Build a network of allies: Cultivate relationships with people who can help you advance',
+        'Study your opponents: Understand their weaknesses and motivations',
+        'Use timing to your advantage: Wait for the right moment to make your move',
+        'Create dependency: Make others need you for something important',
+        'Use flattery strategically: Compliment people genuinely but with purpose',
+        'Avoid unnecessary conflicts: Pick your battles wisely',
+        'Maintain mystery: Don\'t reveal everything about yourself at once',
+        'Always have a backup plan: Never put all your eggs in one basket'
+      ],
       quotes: {
         'Core Principles': [
           'Power is the ability to influence others and get what you want.',
@@ -125,6 +151,18 @@ export default function Home() {
       rating: 5,
       description: 'A counterintuitive approach to living a good life. A book that challenges conventional wisdom about happiness and success.',
       amazonLink: 'https://www.amazon.com/dp/0062457713/?tag=moncodeaff',
+      tips: [
+        'Choose your problems wisely: Not all problems are worth solving',
+        'Accept that life is unfair: Stop expecting everything to be perfect',
+        'Take responsibility for everything: Even if it\'s not your fault, you\'re responsible for how you respond',
+        'Embrace uncertainty: Stop trying to control everything',
+        'Focus on what you can control: Let go of what you can\'t change',
+        'Be honest with yourself: Stop lying to yourself about your situation',
+        'Embrace failure: See it as a learning opportunity, not a reflection of your worth',
+        'Stop comparing yourself to others: Focus on your own journey',
+        'Accept your limitations: You\'re not perfect and that\'s okay',
+        'Find meaning in suffering: Use difficult times as opportunities for growth'
+      ],
       quotes: {
         'Core Values': [
           'Life is essentially an endless series of problems. The solution to one problem is merely the creation of another.',
@@ -170,8 +208,20 @@ export default function Home() {
       author: 'David Goggins',
       coverImage: '/cant-hurt-me.jpg',
       rating: 5,
-      description: "David Goggins, ancien Navy SEAL, partage son parcours hors du commun et ses méthodes pour repousser les limites mentales et physiques. Un livre sur la résilience, la discipline et la transformation personnelle.",
+      description: "David Goggins, former Navy SEAL, shares his extraordinary journey and methods for pushing mental and physical limits.",
       amazonLink: 'https://www.amazon.com/dp/1544512287/?tag=moncodeaff',
+      tips: [
+        'Use the 40% rule: When you think you\'re done, you\'re only at 40% of your capability',
+        'Embrace discomfort: Seek out difficult situations to build mental toughness',
+        'Practice the accountability mirror: Look yourself in the eye and tell yourself the truth',
+        'Develop a calloused mind: Build mental resilience through consistent challenge',
+        'Stop making excuses: Take full responsibility for your life and actions',
+        'Push through when you want to quit: Don\'t stop when you\'re tired, stop when you\'re done',
+        'Create a new identity: Decide who you want to be and act accordingly',
+        'Use pain as fuel: Channel your suffering into motivation for growth',
+        'Practice self-discipline daily: Build the habit of doing what you don\'t want to do',
+        'Focus on what you can control: Stop worrying about things outside your influence'
+      ],
       quotes: {
         'Mental Toughness': [
           "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
@@ -199,109 +249,15 @@ export default function Home() {
         ],
         'Accountability & Discipline': [
           "Tell yourself the truth! That you've wasted enough time, and that you have other dreams that will take courage to realize.",
-          "We live in a world where mediocrity is often rewarded. Stand out.",
           "You must own everything in your world. There is no one else to blame.",
-          "Motivation is crap. Motivation comes and goes. When you're driven, whatever is in front of you will get destroyed.",
-          "The accountability mirror is where you tell yourself the truth.",
-          "Discipline is the root of all good qualities.",
-          "Every day, do something that makes you uncomfortable.",
-          "You have to be willing to work for what you want.",
-          "Be uncommon amongst uncommon people.",
-          "Success is based on your willingness to work your ass off no matter what obstacles are in your way."
-        ]
-      }
-    },
-    {
-      id: 5,
-      title: 'Die with Zero',
-      author: 'Bill Perkins',
-      coverImage: '/Die-with-zero.jpg',
-      rating: 5,
-      description: 'A revolutionary guide to optimizing your life by spending your money and time wisely. Learn how to maximize your life experiences and die with zero regrets.',
-      amazonLink: 'https://www.amazon.com/dp/0358099765/?tag=moncodeaff-20',
-      quotes: {
-        'Life Optimization': [
-          'The goal is not to die with the most money, but to die with the most life experiences.',
-          'You can\'t take it with you, so spend it while you can enjoy it.',
-          'Life is not about accumulating wealth, it\'s about accumulating experiences.',
-          'The best time to spend money is when you can still enjoy it.',
-          'Don\'t wait until you\'re too old to enjoy your wealth.',
-          'Money is a tool for living, not a goal in itself.',
-          'The richest person is not the one who has the most, but the one who needs the least.',
-          'Life experiences compound over time, just like money.',
-          'The earlier you start spending on experiences, the more value you get.',
-          'Your time and energy are your most valuable assets.'
-        ],
-        'Timing and Planning': [
-          'The key is to spend your money at the right time in your life.',
-          'Don\'t save so much that you can\'t enjoy life now.',
-          'Balance saving for the future with living in the present.',
-          'The best time to travel is when you\'re young and healthy.',
-          'Don\'t postpone happiness until retirement.',
-          'Life is unpredictable, so enjoy it while you can.',
-          'The perfect time to start living is now.',
-          'Don\'t let fear of the future prevent you from living today.',
-          'Plan for the future, but don\'t forget to live in the present.',
-          'The best investment you can make is in your own happiness.'
-        ],
-        'Mindset and Philosophy': [
-          'Happiness comes from experiences, not possessions.',
-          'The purpose of money is to buy freedom and experiences.',
-          'Live life on your own terms, not society\'s expectations.',
-          'Don\'t let money control your life choices.',
-          'The goal is to die with zero regrets, not zero dollars.',
-          'Life is too short to waste on things that don\'t matter.',
-          'Focus on what brings you joy, not what brings you status.',
-          'The best life is one well-lived, not one well-saved.',
-          'Don\'t sacrifice your present happiness for future security.',
-          'The richest life is one filled with meaningful experiences.'
-        ]
-      }
-    },
-    {
-      id: 6,
-      title: 'Rich Dad Poor Dad',
-      author: 'Robert Kiyosaki',
-      coverImage: '/Rich-dad-poor-dad.jpg',
-      rating: 5,
-      description: 'A personal finance classic that teaches the difference between working for money and having money work for you. Learn about assets, liabilities, and building wealth through financial education.',
-      amazonLink: 'https://www.amazon.com/dp/1612680194/?tag=moncodeaff-20',
-      quotes: {
-        'Financial Education': [
-          'The poor and the middle class work for money. The rich have money work for them.',
-          'It\'s not how much money you make, but how much money you keep.',
-          'The single most powerful asset we all have is our mind.',
-          'Financial intelligence is the ability to solve financial problems.',
-          'The more you learn, the more you earn.',
-          'The poor and middle class buy liabilities they think are assets.',
-          'The rich focus on their asset column while everyone else focuses on their income statements.',
-          'The most important word in the world of money is cash flow.',
-          'The rich buy assets. The poor only have expenses. The middle class buy liabilities they think are assets.',
-          'Your house is not an asset. It\'s a liability.'
-        ],
-        'Mindset & Philosophy': [
-          'The difference between the rich and the poor is how they handle fear.',
-          'The rich think long term. The poor think short term.',
-          'The rich focus on opportunities. The poor focus on obstacles.',
-          'The rich believe in abundance. The poor believe in scarcity.',
-          'The rich are always learning and growing. The poor think they already know everything.',
-          'The rich take calculated risks. The poor avoid all risks.',
-          'The rich build systems. The poor work in systems.',
-          'The rich think about money in terms of assets and cash flow.',
-          'The poor think about money in terms of salary and expenses.',
-          'The rich understand that money is just a tool, not the goal.'
-        ],
-        'Business & Investing': [
-          'The best investment you can make is in yourself.',
-          'Don\'t work for money, make money work for you.',
-          'The rich don\'t work for money, they work to learn.',
-          'The most important investment you can make is in your financial education.',
-          'The rich buy assets that generate income.',
-          'The poor and middle class buy liabilities that cost money.',
-          'The rich understand the difference between an asset and a liability.',
-          'The rich focus on building businesses and investing.',
-          'The poor focus on getting a job and saving money.',
-          'The rich understand that your house is not an investment, it\'s a liability.'
+          "The most important conversations you'll ever have are the ones you'll have with yourself.",
+          "You have to build calluses on your brain just like how you build calluses on your hands.",
+          "The only way you gain mental toughness is to do things you're not happy doing.",
+          "You are stopping you, you are giving up instead of getting hard.",
+          "You have to develop a calloused mind.",
+          "The most important conversations you'll ever have are the ones you'll have with yourself.",
+          "You must own everything in your world. There is no one else to blame.",
+          "Tell yourself the truth! That you've wasted enough time, and that you have other dreams that will take courage to realize."
         ]
       }
     }
@@ -311,153 +267,164 @@ export default function Home() {
     setExpandedBookId(expandedBookId === bookId ? null : bookId);
   };
 
+  const toggleTips = (bookId: number) => {
+    setShowTips(showTips === bookId ? null : bookId);
+  };
+
   return (
-    <main className="min-h-screen bg-gray-100">
-      {/* Navigation Menu */}
-      <nav className="bg-white shadow-lg">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between h-16">
-            <div className="flex space-x-8">
-              <button
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-6">
+            <div className="flex items-center">
+              <h1 className="text-3xl font-bold text-gray-900">Books Quotes</h1>
+            </div>
+            <nav className="flex space-x-6">
+              <button 
                 onClick={() => setActiveSection('books')}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  activeSection === 'books'
-                    ? 'border-indigo-500 text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                }`}
+                className={`text-lg font-semibold ${activeSection === 'books' ? 'text-blue-700' : 'text-gray-700'} hover:underline`}
               >
                 Books
               </button>
-              <button
+              <button 
                 onClick={() => setActiveSection('about')}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  activeSection === 'about'
-                    ? 'border-indigo-500 text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                }`}
+                className={`text-lg font-semibold ${activeSection === 'about' ? 'text-blue-700' : 'text-gray-700'} hover:underline`}
               >
                 About
               </button>
-              <button
+              <button 
                 onClick={() => setActiveSection('contact')}
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  activeSection === 'contact'
-                    ? 'border-indigo-500 text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                }`}
+                className={`text-lg font-semibold ${activeSection === 'contact' ? 'text-blue-700' : 'text-gray-700'} hover:underline`}
               >
                 Contact
               </button>
-            </div>
+            </nav>
           </div>
         </div>
-      </nav>
+      </header>
 
-      <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {activeSection === 'books' && (
           <div className="space-y-8">
             {books.map((book) => (
-              <div key={book.id} className="bg-white shadow rounded-lg p-6">
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0">
-                    <Image
-                      src={book.coverImage}
-                      alt={`${book.title} cover`}
-                      width={192}
-                      height={288}
-                      className="w-48 h-72 object-cover rounded-lg shadow-md"
-                    />
-                  </div>
-                  <div className="flex-grow">
+              <div key={book.id} className="bg-white rounded-lg shadow-md p-6">
+                <div className="flex items-start space-x-6">
+                  <Image
+                    src={book.coverImage}
+                    alt={book.title}
+                    width={120}
+                    height={160}
+                    className="rounded-lg shadow-md"
+                  />
+                  <div className="flex-1">
                     <h2 className="text-2xl font-bold text-gray-900 mb-2">{book.title}</h2>
-                    <p className="text-lg text-gray-600 mb-4">by {book.author}</p>
+                    <p className="text-lg text-gray-600 mb-2">by {book.author}</p>
                     <div className="flex items-center mb-4">
                       {[...Array(book.rating)].map((_, i) => (
-                        <svg
-                          key={i}
-                          className="w-5 h-5 text-yellow-400"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
+                        <span key={i} className="text-yellow-400">★</span>
                       ))}
                     </div>
                     <p className="text-gray-700 mb-4">{book.description}</p>
-                    {book.amazonLink && (
+                    <div className="flex space-x-4">
                       <a
                         href={book.amazonLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        title={`Buy ${book.title} on Amazon`}
-                        className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors z-10 relative"
+                        className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                       >
                         Buy on Amazon
                       </a>
-                    )}
-                    <button
-                      onClick={() => toggleQuotes(book.id)}
-                      className={`${book.amazonLink ? 'ml-4' : ''} inline-block bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition-colors`}
-                    >
-                      {expandedBookId === book.id ? 'Hide Quotes' : 'Show Quotes'}
-                    </button>
-                    {expandedBookId === book.id && (
-                      <div className="mt-6 space-y-6">
-                        {Object.entries(book.quotes).map(([theme, quotes]) => (
-                          <div key={theme} className="bg-gray-50 p-4 rounded-lg">
-                            <h3 className="text-lg font-semibold text-blue-600 mb-3">{theme}</h3>
-                            <ul className="space-y-2">
-                              {quotes.map((quote, index) => (
-                                <li key={index} className="text-gray-700 italic">
-                                  &ldquo;{quote}&rdquo;
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                      <button
+                        onClick={() => toggleQuotes(book.id)}
+                        className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+                      >
+                        {expandedBookId === book.id ? 'Hide Quotes' : 'Show Quotes'}
+                      </button>
+                      <button
+                        onClick={() => toggleTips(book.id)}
+                        className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+                      >
+                        {showTips === book.id ? 'Hide Tips' : 'Show Tips'}
+                      </button>
+                    </div>
                   </div>
                 </div>
+
+                {/* Tips Section */}
+                {showTips === book.id && (
+                  <div className="mt-6 p-4 bg-purple-50 rounded-lg">
+                    <h3 className="text-xl font-bold text-purple-800 mb-4">10 Practical Tips from "{book.title}"</h3>
+                    <ol className="list-decimal list-inside space-y-2">
+                      {book.tips.map((tip, index) => (
+                        <li key={index} className="text-gray-700 leading-relaxed">
+                          {tip}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+
+                {/* Quotes Section */}
+                {expandedBookId === book.id && (
+                  <div className="mt-6">
+                    {Object.entries(book.quotes).map(([category, quotes]) => (
+                      <div key={category} className="mb-6">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">{category}</h3>
+                        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                          {quotes.map((quote, index) => (
+                            <div key={index} className="bg-gray-50 p-4 rounded-lg">
+                              <p className="text-gray-800 italic">"{quote}"</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
         )}
 
         {activeSection === 'about' && (
-          <div className="bg-white shadow rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">About This Blog</h2>
-            <p className="text-gray-700 mb-4">
-              Welcome to our book blog! We are passionate about sharing our favorite books and the valuable insights they offer. Our goal is to help you discover new perspectives and ideas that can enrich your life.
-            </p>
-            <p className="text-gray-700">
-              Each book we feature has been carefully selected for its ability to inspire, educate, and transform. We believe in the power of reading to change lives and hope our recommendations will help you on your journey of personal growth.
-            </p>
+          <div className="bg-white rounded-lg shadow-md p-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">About Books Quotes</h2>
+            <div className="prose max-w-none">
+              <p className="text-lg text-gray-700 mb-4">
+                Welcome to Books Quotes, your destination for powerful insights from the world's most influential books. 
+                We curate the best quotes and practical tips from books that can transform your life.
+              </p>
+              <p className="text-lg text-gray-700 mb-4">
+                Our mission is to help you apply the wisdom from these books to your daily life through actionable tips 
+                and memorable quotes that inspire change and growth.
+              </p>
+              <p className="text-lg text-gray-700">
+                Whether you're looking for motivation, practical advice, or deep insights, you'll find it here in the 
+                carefully selected content from books that have changed millions of lives.
+              </p>
+            </div>
           </div>
         )}
 
         {activeSection === 'contact' && (
-          <div className="bg-white shadow rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
-            <p className="text-gray-700 mb-4">
-              We&apos;d love to hear from you! Whether you have book recommendations, questions, or just want to share your thoughts, feel free to reach out.
-            </p>
-            <div className="space-y-4">
-              <p className="text-gray-700">
-                <strong>Email:</strong> contact@bookblog.com
+          <div className="bg-white rounded-lg shadow-md p-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Us</h2>
+            <div className="prose max-w-none">
+              <p className="text-lg text-gray-700 mb-4">
+                Have questions, suggestions, or want to share your favorite book quotes? We'd love to hear from you!
               </p>
-              <p className="text-gray-700">
-                <strong>Follow us on social media:</strong>
+              <p className="text-lg text-gray-700 mb-4">
+                Email us at: <a href="mailto:contact@books-quotes.com" className="text-blue-600 hover:underline">contact@books-quotes.com</a>
               </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-blue-600 hover:text-blue-800">Twitter</a>
-                <a href="#" className="text-blue-600 hover:text-blue-800">Instagram</a>
-                <a href="#" className="text-blue-600 hover:text-blue-800">LinkedIn</a>
-              </div>
+              <p className="text-lg text-gray-700">
+                Follow us on social media for daily inspiration and book recommendations.
+              </p>
             </div>
           </div>
         )}
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
