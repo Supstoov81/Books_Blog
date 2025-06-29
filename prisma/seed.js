@@ -1,5 +1,4 @@
 const { PrismaClient } = require('@prisma/client');
-
 const prisma = new PrismaClient();
 
 async function main() {
@@ -8,9 +7,8 @@ async function main() {
   // Clear existing data
   await prisma.book.deleteMany({});
   await prisma.quote.deleteMany({});
-  await prisma.tip.deleteMany({});
 
-  // Create books with their quotes and tips
+  // Create books with their quotes
   const books = [
     {
       title: 'Atomic Habits',
@@ -18,57 +16,70 @@ async function main() {
       coverImage: 'https://m.media-amazon.com/images/I/81wgcld4wxL._AC_UF1000,1000_QL80_.jpg',
       rating: 5,
       description: 'A practical guide to creating good habits and breaking bad ones. An essential book about behavior change.',
+      analysis: 'Atomic Habits by James Clear is a comprehensive guide to understanding and implementing habit formation. The book introduces the concept that small changes can lead to remarkable results through the compound effect of habits. Clear explains that habits are the compound interest of self-improvement, where tiny changes in behavior can result in significant outcomes over time. The book provides practical strategies for building good habits and breaking bad ones, emphasizing the importance of systems over goals. Clear introduces the four laws of behavior change: make it obvious, make it attractive, make it easy, and make it satisfying. He also discusses the concept of identity-based habits, where the focus shifts from what you want to achieve to who you want to become. The book includes numerous real-world examples and actionable advice that readers can immediately apply to their lives. Clear emphasizes that habit formation is not about motivation or willpower, but about creating the right environment and systems that make good habits inevitable and bad habits impossible. The book has become a bestseller because it provides both the theoretical framework and practical tools for anyone looking to improve their habits and, consequently, their life.',
       amazonLink: 'https://www.amazon.com/dp/0735211299/?tag=moncodeaff-20',
-      tips: [
-        'Start with the 2-minute rule: Make new habits so small they take less than 2 minutes to complete',
-        'Use habit stacking: Link new habits to existing ones (e.g., "After I brush my teeth, I will read for 10 minutes")',
-        'Make good habits obvious: Place visual cues in your environment (put gym clothes next to your bed)',
-        'Make bad habits invisible: Remove triggers from your environment (hide your phone in another room)',
-        'Use implementation intentions: Plan exactly when and where you will perform your habit',
-        'Track your habits: Use a habit tracker to visualize your progress and maintain motivation',
-        'Never miss twice: If you miss a habit, get back on track immediately the next day',
-        'Focus on identity change: Ask yourself "What would a [healthy person/reader/athlete] do?"',
-        'Use temptation bundling: Pair something you want to do with something you need to do',
-        'Make habits satisfying: Add immediate rewards to reinforce good behavior'
-      ],
-      quotes: {
-        'Core Principles': [
-          'You do not rise to the level of your goals, you fall to the level of your systems.',
-          'Small habits make a big difference.',
-          'Change is not an event, it\'s a process.',
-          'The most effective way to change your habits is to focus not on what you want to achieve, but on who you wish to become.',
-          'Every action you take is a vote for the type of person you wish to become.',
-          'The best way to change your habits is to focus not on what you want to achieve, but on who you want to become.',
-          'Habits are the compound interest of self-improvement.',
-          'The quality of your life is a measure of the quality of your habits.',
-          'You do not rise to the level of your goals, you fall to the level of your systems.',
-          'The most effective way to change your habits is to focus not on what you want to achieve, but on who you wish to become.'
-        ],
-        'Identity and Habits': [
-          'Habits are the compound interest of self-improvement.',
-          'Every action you take is a vote for the type of person you wish to become.',
-          'The best way to change your habits is to focus not on what you want to achieve, but on who you want to become.',
-          'Your identity emerges out of your habits.',
-          'The more you repeat a behavior, the more you reinforce the identity associated with that behavior.',
-          'True behavior change is identity change.',
-          'The goal is not to read a book, the goal is to become a reader.',
-          'The goal is not to run a marathon, the goal is to become a runner.',
-          'The goal is not to play an instrument, the goal is to become a musician.',
-          'The goal is not to learn a language, the goal is to become bilingual.'
-        ],
-        'Practical Application': [
-          'Habits are the compound interest of self-improvement.',
-          'You do not rise to the level of your goals, you fall to the level of your systems.',
-          'The quality of your life is a measure of the quality of your habits.',
-          'Habits are like the atoms of your life. Each one is a fundamental unit that contributes to your overall improvement.',
-          'The most effective way to change your habits is to focus not on what you want to achieve, but on who you wish to become.',
-          'Every action you take is a vote for the type of person you wish to become.',
-          'The best way to change your habits is to focus not on what you want to achieve, but on who you want to become.',
-          'Habits are the compound interest of self-improvement.',
-          'The quality of your life is a measure of the quality of your habits.',
-          'You do not rise to the level of your goals, you fall to the level of your systems.'
-        ]
-      }
+      quotes: [
+        {
+          text: 'You do not rise to the level of your goals, you fall to the level of your systems.',
+          context: 'Core principle about the importance of systems over goals',
+          themes: 'systems, goals, improvement',
+          category: 'Core Principles'
+        },
+        {
+          text: 'Small habits make a big difference.',
+          context: 'Emphasizing the power of incremental change',
+          themes: 'habits, change, progress',
+          category: 'Core Principles'
+        },
+        {
+          text: 'Change is not an event, it\'s a process.',
+          context: 'Understanding that transformation takes time',
+          themes: 'change, process, patience',
+          category: 'Core Principles'
+        },
+        {
+          text: 'The most effective way to change your habits is to focus not on what you want to achieve, but on who you wish to become.',
+          context: 'Identity-based habit formation',
+          themes: 'identity, habits, transformation',
+          category: 'Identity and Habits'
+        },
+        {
+          text: 'Every action you take is a vote for the type of person you wish to become.',
+          context: 'How daily actions shape identity',
+          themes: 'identity, actions, consistency',
+          category: 'Identity and Habits'
+        },
+        {
+          text: 'Habits are the compound interest of self-improvement.',
+          context: 'The exponential effect of consistent habits',
+          themes: 'habits, compound effect, improvement',
+          category: 'Practical Application'
+        },
+        {
+          text: 'The quality of your life is a measure of the quality of your habits.',
+          context: 'Direct correlation between habits and life quality',
+          themes: 'habits, life quality, measurement',
+          category: 'Practical Application'
+        },
+        {
+          text: 'Your identity emerges out of your habits.',
+          context: 'How habits shape who we become',
+          themes: 'identity, habits, emergence',
+          category: 'Identity and Habits'
+        },
+        {
+          text: 'True behavior change is identity change.',
+          context: 'The deeper level of transformation',
+          themes: 'behavior, identity, change',
+          category: 'Identity and Habits'
+        },
+        {
+          text: 'The goal is not to read a book, the goal is to become a reader.',
+          context: 'Identity-based approach to habits',
+          themes: 'identity, goals, transformation',
+          category: 'Identity and Habits'
+        }
+      ]
     },
     {
       title: 'Power',
@@ -76,57 +87,70 @@ async function main() {
       coverImage: 'https://m.media-amazon.com/images/I/71aG+xDKSYL._AC_UF1000,1000_QL80_.jpg',
       rating: 5,
       description: 'A book about the strategies and principles of power and influence.',
+      analysis: 'Power by Robert Greene is a comprehensive study of the strategies and principles of power and influence throughout history. The book examines how power operates in various contexts, from politics and business to personal relationships. Greene draws from historical examples, including figures like Machiavelli, Sun Tzu, and various historical leaders, to illustrate the timeless principles of power. The book is structured around 48 laws of power, each accompanied by historical examples and practical applications. Greene emphasizes that power is not inherently evil, but a fundamental aspect of human interaction that can be used for both positive and negative purposes. He discusses the importance of understanding power dynamics, mastering emotions, controlling information, and building strategic relationships. The book provides insights into how to gain, maintain, and use power effectively while avoiding common pitfalls. Greene also addresses the ethical considerations of power and the responsibility that comes with it. The book serves as both a practical guide for those seeking to understand power dynamics and a historical analysis of how power has been wielded throughout human history. It challenges readers to think critically about power and its role in their personal and professional lives.',
       amazonLink: 'https://www.amazon.com/dp/1861972784/?tag=moncodeaff',
-      tips: [
-        'Master your emotions: Never show anger or frustration in professional settings',
-        'Control information: Be strategic about what you reveal and what you keep private',
-        'Build a network of allies: Cultivate relationships with people who can help you advance',
-        'Study your opponents: Understand their weaknesses and motivations',
-        'Use timing to your advantage: Wait for the right moment to make your move',
-        'Create dependency: Make others need you for something important',
-        'Use flattery strategically: Compliment people genuinely but with purpose',
-        'Avoid unnecessary conflicts: Pick your battles wisely',
-        'Maintain mystery: Don\'t reveal everything about yourself at once',
-        'Always have a backup plan: Never put all your eggs in one basket'
-      ],
-      quotes: {
-        'Core Principles': [
-          'Power is the ability to influence others and get what you want.',
-          'The best way to win is to never play the other person\'s game.',
-          'Power is a matter of perception.',
-          'The most important skill in gaining power is the ability to master your emotions.',
-          'Power is not what you have, but what others think you have.',
-          'The key to power is the ability to judge who is best able to further your interests in all situations.',
-          'Power is a social game. To learn and master it, you must develop the ability to study and understand people.',
-          'The essence of power is the ability to keep the initiative, to get others to react to your moves, to keep your opponent responding to you.',
-          'Power is based on a simple rule: you must always be aware of what you are revealing or concealing.',
-          'The most important aspect of power is how you make others feel.'
-        ],
-        'Strategic Thinking': [
-          'Never show your anger, it is a weapon you must keep secret.',
-          'Power is like a chess game: each piece has its role and value.',
-          'The best way to win is to make the other person lose without realizing it.',
-          'The key to power is the ability to judge who is best able to further your interests in all situations.',
-          'Power is a social game. To learn and master it, you must develop the ability to study and understand people.',
-          'The essence of power is the ability to keep the initiative, to get others to react to your moves.',
-          'Power is based on a simple rule: you must always be aware of what you are revealing or concealing.',
-          'The most important aspect of power is how you make others feel.',
-          'The key to power is the ability to judge who is best able to further your interests in all situations.',
-          'Power is a social game. To learn and master it, you must develop the ability to study and understand people.'
-        ],
-        'Practical Tactics': [
-          'Power is a matter of timing and patience.',
-          'Never fight against an enemy stronger than you.',
-          'Power is a matter of information control.',
-          'The best way to win is to make the other person think they have won.',
-          'The key to power is the ability to judge who is best able to further your interests in all situations.',
-          'Power is a social game. To learn and master it, you must develop the ability to study and understand people.',
-          'The essence of power is the ability to keep the initiative, to get others to react to your moves.',
-          'Power is based on a simple rule: you must always be aware of what you are revealing or concealing.',
-          'The most important aspect of power is how you make others feel.',
-          'The key to power is the ability to judge who is best able to further your interests in all situations.'
-        ]
-      }
+      quotes: [
+        {
+          text: 'Power is the ability to influence others and get what you want.',
+          context: 'Basic definition of power',
+          themes: 'power, influence, control',
+          category: 'Core Principles'
+        },
+        {
+          text: 'The best way to win is to never play the other person\'s game.',
+          context: 'Strategic advantage through game theory',
+          themes: 'strategy, advantage, control',
+          category: 'Strategic Thinking'
+        },
+        {
+          text: 'Power is a matter of perception.',
+          context: 'The psychological aspect of power',
+          themes: 'power, perception, psychology',
+          category: 'Core Principles'
+        },
+        {
+          text: 'The most important skill in gaining power is the ability to master your emotions.',
+          context: 'Emotional control as a power tool',
+          themes: 'emotions, control, power',
+          category: 'Core Principles'
+        },
+        {
+          text: 'Never show your anger, it is a weapon you must keep secret.',
+          context: 'Strategic emotional control',
+          themes: 'emotions, strategy, control',
+          category: 'Strategic Thinking'
+        },
+        {
+          text: 'Power is like a chess game: each piece has its role and value.',
+          context: 'Strategic thinking in power dynamics',
+          themes: 'strategy, chess, power',
+          category: 'Strategic Thinking'
+        },
+        {
+          text: 'The key to power is the ability to judge who is best able to further your interests in all situations.',
+          context: 'Strategic relationship building',
+          themes: 'judgment, relationships, interests',
+          category: 'Core Principles'
+        },
+        {
+          text: 'Power is a social game. To learn and master it, you must develop the ability to study and understand people.',
+          context: 'Social intelligence in power dynamics',
+          themes: 'social intelligence, understanding, power',
+          category: 'Core Principles'
+        },
+        {
+          text: 'The essence of power is the ability to keep the initiative, to get others to react to your moves.',
+          context: 'Maintaining control through initiative',
+          themes: 'initiative, control, strategy',
+          category: 'Practical Tactics'
+        },
+        {
+          text: 'Power is based on a simple rule: you must always be aware of what you are revealing or concealing.',
+          context: 'Information control as power',
+          themes: 'information, control, awareness',
+          category: 'Practical Tactics'
+        }
+      ]
     },
     {
       title: 'The Subtle Art of Not Giving a F*ck',
@@ -134,57 +158,70 @@ async function main() {
       coverImage: 'https://m.media-amazon.com/images/I/71QKQ9mwV7L._AC_UF1000,1000_QL80_.jpg',
       rating: 5,
       description: 'A counterintuitive approach to living a good life. A book that challenges conventional wisdom about happiness and success.',
+      analysis: 'The Subtle Art of Not Giving a F*ck by Mark Manson is a counterintuitive approach to living a good life that challenges conventional wisdom about happiness and success. Manson argues that the key to a good life is not giving a f*ck about more things, but giving a f*ck about fewer, more important things. He challenges readers to question their values and priorities, suggesting that many people pursue goals and values that don\'t actually bring them happiness. The book emphasizes the importance of accepting negative experiences and using them as opportunities for growth. Manson discusses how the constant pursuit of positive experiences can actually lead to more suffering, while accepting and working through difficult emotions can lead to greater fulfillment. He introduces the concept of "choosing your problems wisely" and taking responsibility for everything in your life, even if it\'s not your fault. The book challenges readers to be honest with themselves about their limitations and to stop comparing themselves to others. Manson uses humor and direct language to deliver serious insights about life, happiness, and personal responsibility. The book has resonated with millions of readers because it provides a refreshing perspective on how to live a meaningful life without falling into the traps of modern society\'s expectations.',
       amazonLink: 'https://www.amazon.com/dp/0062457713/?tag=moncodeaff',
-      tips: [
-        'Choose your problems wisely: Not all problems are worth solving',
-        'Accept that life is unfair: Stop expecting everything to be perfect',
-        'Take responsibility for everything: Even if it\'s not your fault, you\'re responsible for how you respond',
-        'Embrace uncertainty: Stop trying to control everything',
-        'Focus on what you can control: Let go of what you can\'t change',
-        'Be honest with yourself: Stop lying to yourself about your situation',
-        'Embrace failure: See it as a learning opportunity, not a reflection of your worth',
-        'Stop comparing yourself to others: Focus on your own journey',
-        'Accept your limitations: You\'re not perfect and that\'s okay',
-        'Find meaning in suffering: Use difficult times as opportunities for growth'
-      ],
-      quotes: {
-        'Core Values': [
-          'Life is essentially an endless series of problems. The solution to one problem is merely the creation of another.',
-          'Happiness comes from solving problems.',
-          'Unhealthy values create unhealthy problems.',
-          'The key to a good life is not giving a f*ck about more; it\'s giving a f*ck about less, giving a f*ck about only what is true and immediate and important.',
-          'The desire for more positive experience is itself a negative experience.',
-          'The acceptance of negative experience is itself a positive experience.',
-          'The more you try to be certain about something, the more uncertain and insecure you will feel.',
-          'The more you try to be perfect, the more you will feel imperfect.',
-          'The more you try to be happy, the more you will feel unhappy.',
-          'The more you try to be right, the more you will feel wrong.'
-        ],
-        'Personal Responsibility': [
-          'You are responsible for everything in your life, even if it\'s not your fault.',
-          'Freedom comes from accepting responsibility.',
-          'The power to choose is the power to change.',
-          'The more you accept responsibility for your life, the more power you have to change it.',
-          'The more you blame others for your problems, the more you give away your power to change.',
-          'The more you take responsibility for your problems, the more you gain the power to solve them.',
-          'The more you accept that life is not fair, the more you can focus on what you can control.',
-          'The more you accept that you are not special, the more you can focus on what makes you unique.',
-          'The more you accept that you are not entitled to anything, the more you can focus on what you can earn.',
-          'The more you accept that you are not perfect, the more you can focus on what you can improve.'
-        ],
-        'Authentic Living': [
-          'Truth is more important than comfort.',
-          'Being authentic means accepting reality, even when it\'s painful.',
-          'Happiness requires honesty with yourself.',
-          'Personal growth comes from accepting our limitations.',
-          'The more you try to be certain about something, the more uncertain and insecure you will feel.',
-          'The more you try to be perfect, the more you will feel imperfect.',
-          'The more you try to be happy, the more you will feel unhappy.',
-          'The more you try to be right, the more you will feel wrong.',
-          'The more you try to be certain about something, the more uncertain and insecure you will feel.',
-          'The more you try to be perfect, the more you will feel imperfect.'
-        ]
-      }
+      quotes: [
+        {
+          text: 'Life is essentially an endless series of problems. The solution to one problem is merely the creation of another.',
+          context: 'The nature of life and problem-solving',
+          themes: 'problems, life, perspective',
+          category: 'Core Values'
+        },
+        {
+          text: 'Happiness comes from solving problems.',
+          context: 'Finding meaning through challenges',
+          themes: 'happiness, problems, meaning',
+          category: 'Core Values'
+        },
+        {
+          text: 'You are responsible for everything in your life, even if it\'s not your fault.',
+          context: 'Taking full responsibility for responses',
+          themes: 'responsibility, control, choice',
+          category: 'Personal Responsibility'
+        },
+        {
+          text: 'Freedom comes from accepting responsibility.',
+          context: 'The paradox of responsibility and freedom',
+          themes: 'freedom, responsibility, acceptance',
+          category: 'Personal Responsibility'
+        },
+        {
+          text: 'Truth is more important than comfort.',
+          context: 'Choosing honesty over comfort',
+          themes: 'truth, comfort, honesty',
+          category: 'Authentic Living'
+        },
+        {
+          text: 'Being authentic means accepting reality, even when it\'s painful.',
+          context: 'Authenticity through reality acceptance',
+          themes: 'authenticity, reality, acceptance',
+          category: 'Authentic Living'
+        },
+        {
+          text: 'The key to a good life is not giving a f*ck about more; it\'s giving a f*ck about less, giving a f*ck about only what is true and immediate and important.',
+          context: 'Selective caring as a life strategy',
+          themes: 'priorities, values, focus',
+          category: 'Core Values'
+        },
+        {
+          text: 'The desire for more positive experience is itself a negative experience.',
+          context: 'The paradox of pursuing happiness',
+          themes: 'happiness, paradox, desire',
+          category: 'Core Values'
+        },
+        {
+          text: 'The acceptance of negative experience is itself a positive experience.',
+          context: 'Finding positivity in acceptance',
+          themes: 'acceptance, negative experience, positivity',
+          category: 'Core Values'
+        },
+        {
+          text: 'Happiness requires honesty with yourself.',
+          context: 'Self-honesty as foundation for happiness',
+          themes: 'happiness, honesty, self-awareness',
+          category: 'Authentic Living'
+        }
+      ]
     },
     {
       title: "Can't Hurt Me",
@@ -192,57 +229,70 @@ async function main() {
       coverImage: '/cant-hurt-me.jpg',
       rating: 5,
       description: "David Goggins, former Navy SEAL, shares his extraordinary journey and methods for pushing mental and physical limits.",
+      analysis: "Can't Hurt Me by David Goggins is a powerful memoir and self-help book that chronicles the extraordinary journey of a man who transformed himself from an overweight, underachieving individual into one of the world's most elite athletes and military operators. Goggins shares his brutal childhood, his struggles with racism and poverty, and his journey to becoming a Navy SEAL, ultramarathon runner, and ultra-endurance athlete. The book introduces the concept of the '40% rule,' which suggests that when most people think they're done, they've only used 40% of their capability. Goggins emphasizes the importance of developing mental toughness through embracing discomfort and pushing through pain. He introduces the 'accountability mirror' concept, where individuals must honestly assess themselves and take full responsibility for their lives. The book challenges readers to stop making excuses and to develop a 'calloused mind' that can withstand any challenge. Goggins shares his philosophy that suffering is a test and that true growth comes from doing things you don't want to do. The book provides practical strategies for building mental resilience, including daily self-discipline practices and pushing through when you want to quit. Goggins' story serves as both inspiration and a practical guide for anyone looking to overcome their limitations and achieve extraordinary results through mental toughness and relentless determination.",
       amazonLink: 'https://www.amazon.com/dp/1544512287/?tag=moncodeaff',
-      tips: [
-        'Use the 40% rule: When you think you\'re done, you\'re only at 40% of your capability',
-        'Embrace discomfort: Seek out difficult situations to build mental toughness',
-        'Practice the accountability mirror: Look yourself in the eye and tell yourself the truth',
-        'Develop a calloused mind: Build mental resilience through consistent challenge',
-        'Stop making excuses: Take full responsibility for your life and actions',
-        'Push through when you want to quit: Don\'t stop when you\'re tired, stop when you\'re done',
-        'Create a new identity: Decide who you want to be and act accordingly',
-        'Use pain as fuel: Channel your suffering into motivation for growth',
-        'Practice self-discipline daily: Build the habit of doing what you don\'t want to do',
-        'Focus on what you can control: Stop worrying about things outside your influence'
-      ],
-      quotes: {
-        'Mental Toughness': [
-          "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
-          "The mind is the most powerful weapon we have.",
-          "You have to build calluses on your brain just like how you build calluses on your hands.",
-          "Most people who are criticizing and judging haven't even tried what you failed at.",
-          "Suffering is a test. That's all it is. Suffering is the true test of life.",
-          "If you can get through doing things that you hate to do, on the other side is greatness.",
-          "The only way you gain mental toughness is to do things you're not happy doing.",
-          "You are stopping you, you are giving up instead of getting hard.",
-          "You have to develop a calloused mind.",
-          "The most important conversations you'll ever have are the ones you'll have with yourself."
-        ],
-        'Overcoming Limits': [
-          "When you think you're done, you're only at 40% of your body's capability.",
-          "Don't stop when you're tired. Stop when you're done.",
-          "Be more than motivated, be more than driven, become literally obsessed to the point where people think you're f*cking nuts.",
-          "Greatness pulls mediocrity into the mud. Get out there and get after it.",
-          "We all have the ability to come from nothing to something.",
-          "You have to be willing to go to war with yourself and create a whole new identity.",
-          "The only thing more contagious than a good attitude is a bad one.",
-          "You are in control of your own mind.",
-          "If you want to get better, do the things that no-one else wants to do.",
-          "Don't let your mind hold you back."
-        ],
-        'Accountability & Discipline': [
-          "Tell yourself the truth! That you've wasted enough time, and that you have other dreams that will take courage to realize.",
-          "You must own everything in your world. There is no one else to blame.",
-          "The most important conversations you'll ever have are the ones you'll have with yourself.",
-          "You have to build calluses on your brain just like how you build calluses on your hands.",
-          "The only way you gain mental toughness is to do things you're not happy doing.",
-          "You are stopping you, you are giving up instead of getting hard.",
-          "You have to develop a calloused mind.",
-          "The most important conversations you'll ever have are the ones you'll have with yourself.",
-          "You must own everything in your world. There is no one else to blame.",
-          "Tell yourself the truth! That you've wasted enough time, and that you have other dreams that will take courage to realize."
-        ]
-      }
+      quotes: [
+        {
+          text: "You are in danger of living a life so comfortable and soft, that you will die without ever realizing your true potential.",
+          context: 'Warning against complacency and comfort',
+          themes: 'potential, comfort, complacency',
+          category: 'Mental Toughness'
+        },
+        {
+          text: "The mind is the most powerful weapon we have.",
+          context: 'The power of mental strength',
+          themes: 'mind, power, weapon',
+          category: 'Mental Toughness'
+        },
+        {
+          text: "When you think you're done, you're only at 40% of your body's capability.",
+          context: 'The 40% rule principle',
+          themes: 'capability, limits, potential',
+          category: 'Overcoming Limits'
+        },
+        {
+          text: "Don't stop when you're tired. Stop when you're done.",
+          context: 'Pushing through exhaustion',
+          themes: 'perseverance, exhaustion, completion',
+          category: 'Overcoming Limits'
+        },
+        {
+          text: "Tell yourself the truth! That you've wasted enough time, and that you have other dreams that will take courage to realize.",
+          context: 'Self-accountability and truth-telling',
+          themes: 'truth, accountability, courage',
+          category: 'Accountability & Discipline'
+        },
+        {
+          text: "You must own everything in your world. There is no one else to blame.",
+          context: 'Taking full responsibility',
+          themes: 'responsibility, ownership, blame',
+          category: 'Accountability & Discipline'
+        },
+        {
+          text: "You have to build calluses on your brain just like how you build calluses on your hands.",
+          context: 'Developing mental resilience',
+          themes: 'resilience, mental toughness, development',
+          category: 'Mental Toughness'
+        },
+        {
+          text: "The only way you gain mental toughness is to do things you're not happy doing.",
+          context: 'Growth through discomfort',
+          themes: 'mental toughness, discomfort, growth',
+          category: 'Mental Toughness'
+        },
+        {
+          text: "You are stopping you, you are giving up instead of getting hard.",
+          context: 'Self-sabotage and quitting',
+          themes: 'self-sabotage, quitting, mental strength',
+          category: 'Mental Toughness'
+        },
+        {
+          text: "The most important conversations you'll ever have are the ones you'll have with yourself.",
+          context: 'Self-dialogue and internal communication',
+          themes: 'self-talk, internal dialogue, importance',
+          category: 'Accountability & Discipline'
+        }
+      ]
     }
   ];
 
@@ -256,31 +306,22 @@ async function main() {
         coverImage: bookData.coverImage,
         rating: bookData.rating,
         description: bookData.description,
+        analysis: bookData.analysis,
         amazonLink: bookData.amazonLink,
       },
     });
 
-    // Create tips for the book
-    for (const tipText of bookData.tips) {
-      await prisma.tip.create({
+    // Create quotes for the book
+    for (const quoteData of bookData.quotes) {
+      await prisma.quote.create({
         data: {
-          content: tipText,
+          text: quoteData.text,
+          context: quoteData.context,
+          themes: quoteData.themes,
+          category: quoteData.category,
           bookId: book.id,
         },
       });
-    }
-
-    // Create quotes for the book
-    for (const [category, quotes] of Object.entries(bookData.quotes)) {
-      for (const quoteText of quotes) {
-        await prisma.quote.create({
-          data: {
-            content: quoteText,
-            category: category,
-            bookId: book.id,
-          },
-        });
-      }
     }
   }
 
