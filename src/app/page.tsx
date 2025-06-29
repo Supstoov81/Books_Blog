@@ -33,7 +33,7 @@ export default function Home() {
 
   // Tips for each book (hardcoded since we don't have a Tip model)
   const bookTips = {
-    1: [ // Atomic Habits
+    'Atomic Habits': [
       'Start with the 2-minute rule: Make new habits so small they take less than 2 minutes to complete',
       'Use habit stacking: Link new habits to existing ones (e.g., "After I brush my teeth, I will read for 10 minutes")',
       'Make good habits obvious: Place visual cues in your environment (put gym clothes next to your bed)',
@@ -45,7 +45,7 @@ export default function Home() {
       'Use temptation bundling: Pair something you want to do with something you need to do',
       'Make habits satisfying: Add immediate rewards to reinforce good behavior'
     ],
-    2: [ // Power
+    'Power': [
       'Master your emotions: Never show anger or frustration in professional settings',
       'Control information: Be strategic about what you reveal and what you keep private',
       'Build a network of allies: Cultivate relationships with people who can help you advance',
@@ -57,7 +57,7 @@ export default function Home() {
       'Maintain mystery: Don\'t reveal everything about yourself at once',
       'Always have a backup plan: Never put all your eggs in one basket'
     ],
-    3: [ // The Subtle Art of Not Giving a F*ck
+    'The Subtle Art of Not Giving a F*ck': [
       'Choose your problems wisely: Not all problems are worth solving',
       'Accept that life is unfair: Stop expecting everything to be perfect',
       'Take responsibility for everything: Even if it\'s not your fault, you\'re responsible for how you respond',
@@ -69,7 +69,7 @@ export default function Home() {
       'Accept your limitations: You\'re not perfect and that\'s okay',
       'Find meaning in suffering: Use difficult times as opportunities for growth'
     ],
-    4: [ // Can't Hurt Me
+    "Can't Hurt Me": [
       'Use the 40% rule: When you think you\'re done, you\'re only at 40% of your capability',
       'Embrace discomfort: Seek out difficult situations to build mental toughness',
       'Practice the accountability mirror: Look yourself in the eye and tell yourself the truth',
@@ -212,11 +212,11 @@ export default function Home() {
                 </div>
 
                 {/* Tips Section */}
-                {showTips === book.id && bookTips[book.id as keyof typeof bookTips] && (
+                {showTips === book.id && bookTips[book.title as keyof typeof bookTips] && (
                   <div className="mt-6 p-4 bg-purple-50 rounded-lg">
                     <h3 className="text-xl font-bold text-purple-800 mb-4">10 Practical Tips from &quot;{book.title}&quot;</h3>
                     <ol className="list-decimal list-inside space-y-2">
-                      {bookTips[book.id as keyof typeof bookTips].map((tip, index) => (
+                      {bookTips[book.title as keyof typeof bookTips].map((tip, index) => (
                         <li key={index} className="text-gray-700 leading-relaxed">
                           {tip}
                         </li>

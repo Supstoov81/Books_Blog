@@ -4,9 +4,9 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('Starting database seeding...');
 
-  // Clear existing data
-  await prisma.book.deleteMany({});
+  // Clear existing data - delete quotes first, then books
   await prisma.quote.deleteMany({});
+  await prisma.book.deleteMany({});
 
   // Create books with their quotes
   const books = [

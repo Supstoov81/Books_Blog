@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import GoogleAnalyticsHead from "@/components/GoogleAnalyticsHead";
-import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -45,12 +44,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <GoogleAnalyticsHead />
-        {/* Menu principal */}
-        <nav className="flex space-x-6">
-          <Link href="/" className="text-lg font-bold text-blue-700 hover:underline">Home</Link>
-          <Link href="#about" className="text-lg font-semibold text-gray-700 hover:underline">About</Link>
-          <Link href="#contact" className="text-lg font-semibold text-gray-700 hover:underline">Contact</Link>
-        </nav>
         {children}
         <Analytics />
       </body>
