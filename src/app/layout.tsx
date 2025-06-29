@@ -48,8 +48,8 @@ export default function RootLayout({
         {/* Menu principal */}
         <nav className="bg-white shadow mb-6">
           <div className="max-w-3xl mx-auto px-4 py-3 flex items-center space-x-6">
-            <Link href="/" className="text-lg font-bold text-blue-700 hover:underline">Accueil</Link>
-            <Link href="/books" className="text-lg font-semibold text-gray-700 hover:underline">Livres</Link>
+            <Link href="/" className="text-lg font-bold text-blue-700 hover:underline">Home</Link>
+            <Link href="/books" className="text-lg font-semibold text-gray-700 hover:underline">Books</Link>
           </div>
         </nav>
         {children}

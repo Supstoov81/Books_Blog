@@ -9,7 +9,7 @@ export default async function BooksList() {
 
   return (
     <main className="max-w-3xl mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-6">Livres</h1>
+      <h1 className="text-3xl font-bold mb-6">Books</h1>
       <ul className="space-y-6">
         {books.map(book => (
           <li key={book.id} className="border rounded-lg p-4 bg-white shadow">
