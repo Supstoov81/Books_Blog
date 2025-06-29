@@ -214,7 +214,7 @@ export default function Home() {
                 {/* Tips Section */}
                 {showTips === book.id && bookTips[book.id as keyof typeof bookTips] && (
                   <div className="mt-6 p-4 bg-purple-50 rounded-lg">
-                    <h3 className="text-xl font-bold text-purple-800 mb-4">10 Practical Tips from "{book.title}"</h3>
+                    <h3 className="text-xl font-bold text-purple-800 mb-4">10 Practical Tips from &quot;{book.title}&quot;</h3>
                     <ol className="list-decimal list-inside space-y-2">
                       {bookTips[book.id as keyof typeof bookTips].map((tip, index) => (
                         <li key={index} className="text-gray-700 leading-relaxed">
@@ -234,7 +234,7 @@ export default function Home() {
                         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                           {quotes.map((quote) => (
                             <div key={quote.id} className="bg-gray-50 p-4 rounded-lg">
-                              <p className="text-gray-800 italic">"{quote.text}"</p>
+                              <p className="text-gray-800 italic">&quot;{quote.text}&quot;</p>
                             </div>
                           ))}
                         </div>
@@ -272,7 +272,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Us</h2>
             <div className="prose max-w-none">
               <p className="text-lg text-gray-700 mb-4">
-                Have questions, suggestions, or want to share your favorite book quotes? We'd love to hear from you!
+                Have questions, suggestions, or want to share your favorite book quotes? We&#39;d love to hear from you!
               </p>
               <p className="text-lg text-gray-700 mb-4">
                 Email us at: <a href="mailto:contact@books-quotes.com" className="text-blue-600 hover:underline">contact@books-quotes.com</a>
