@@ -252,7 +252,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-6">About Books Quotes</h2>
             <div className="prose max-w-none">
               <p className="text-lg text-gray-700 mb-4">
-                Welcome to Books Quotes, your destination for powerful insights from the world's most influential books. 
+                Welcome to Books Quotes, your destination for powerful insights from the world&#39;s most influential books. 
                 We curate the best quotes and practical tips from books that can transform your life.
               </p>
               <p className="text-lg text-gray-700 mb-4">
@@ -260,7 +260,7 @@ export default function Home() {
                 and memorable quotes that inspire change and growth.
               </p>
               <p className="text-lg text-gray-700">
-                Whether you're looking for motivation, practical advice, or deep insights, you'll find it here in the 
+                Whether you&#39;re looking for motivation, practical advice, or deep insights, you&#39;ll find it here in the 
                 carefully selected content from books that have changed millions of lives.
               </p>
             </div>
