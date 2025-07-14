@@ -293,6 +293,77 @@ async function main() {
           category: 'Accountability & Discipline'
         }
       ]
+    },
+    {
+      title: 'How to Win Friends and Influence People',
+      author: 'Dale Carnegie',
+      coverImage: '/images/How-to-win-friends.png',
+      rating: 5,
+      description: 'A timeless guide to building relationships, influencing people, and achieving personal and professional success.',
+      analysis: 'How to Win Friends and Influence People by Dale Carnegie is a classic self-help book that has helped millions of readers improve their social skills and relationships. The book provides practical advice on how to make people like you, win others to your way of thinking, and change people without arousing resentment. Carnegie emphasizes the importance of genuine interest in others, active listening, and positive reinforcement. The principles outlined in the book are illustrated with engaging stories and real-life examples, making them easy to understand and apply. The book remains relevant today for anyone looking to improve their communication skills, build lasting relationships, and achieve success in both personal and professional life.',
+      amazonLink: 'https://www.amazon.com/dp/0671027034/?tag=moncodeaff',
+      quotes: [
+        {
+          text: 'You can make more friends in two months by becoming interested in other people than you can in two years by trying to get other people interested in you.',
+          context: 'On the power of genuine interest in others',
+          themes: 'friendship, interest, relationships',
+          category: 'Building Relationships'
+        },
+        {
+          text: 'Remember that a person’s name is to that person the sweetest sound in any language.',
+          context: 'On the importance of remembering names',
+          themes: 'names, respect, communication',
+          category: 'Communication Skills'
+        },
+        {
+          text: 'The only way to get the best of an argument is to avoid it.',
+          context: 'On handling disagreements',
+          themes: 'argument, conflict, resolution',
+          category: 'Conflict Management'
+        },
+        {
+          text: 'Talk to someone about themselves and they’ll listen for hours.',
+          context: 'On engaging others in conversation',
+          themes: 'conversation, listening, engagement',
+          category: 'Communication Skills'
+        },
+        {
+          text: 'If you want to gather honey, don’t kick over the beehive.',
+          context: 'On criticism and encouragement',
+          themes: 'criticism, encouragement, motivation',
+          category: 'Positive Influence'
+        },
+        {
+          text: 'Give honest and sincere appreciation.',
+          context: 'On the value of appreciation',
+          themes: 'appreciation, sincerity, motivation',
+          category: 'Positive Influence'
+        },
+        {
+          text: 'Become genuinely interested in other people.',
+          context: 'On building rapport',
+          themes: 'interest, rapport, relationships',
+          category: 'Building Relationships'
+        },
+        {
+          text: 'If you are wrong, admit it quickly and emphatically.',
+          context: 'On admitting mistakes',
+          themes: 'mistakes, humility, growth',
+          category: 'Personal Growth'
+        },
+        {
+          text: 'Try honestly to see things from the other person’s point of view.',
+          context: 'On empathy and understanding',
+          themes: 'empathy, understanding, perspective',
+          category: 'Empathy'
+        },
+        {
+          text: 'Ask questions instead of giving direct orders.',
+          context: 'On leadership and influence',
+          themes: 'leadership, influence, communication',
+          category: 'Leadership'
+        }
+      ]
     }
   ];
 
