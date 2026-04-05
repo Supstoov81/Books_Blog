@@ -15,22 +15,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Books Quotes – Personal Development Book Quotes & Summaries",
-  description: "Explore curated personal development book quotes and summaries from bestsellers like Atomic Habits, Power, Rich Dad Poor Dad, and more. Transform your mindset with actionable insights from top authors.",
-  keywords: "personal development books, book quotes, Atomic Habits, Power, Rich Dad Poor Dad, Can't Hurt Me, Die with Zero, Mark Manson, James Clear, Robert Greene, David Goggins, Bill Perkins, Robert Kiyosaki, self-improvement, motivation, success quotes",
+  title: {
+    default: "Books Quotes – Personal Development Book Quotes & Summaries",
+    template: "%s | Books Quotes",
+  },
+  description: "Discover the most powerful quotes, key lessons, and practical tips from the best personal development books. Atomic Habits, The Daily Stoic, How to Win Friends, and more.",
+  keywords: "personal development books, book quotes, book summaries, Atomic Habits, The Daily Stoic, How to Win Friends, Power, Can't Hurt Me, self-improvement, motivation, success mindset, book tips",
   authors: [{ name: "Books Quotes" }],
-  robots: "index, follow",
+  metadataBase: new URL("https://books-quotes.com"),
+  alternates: { canonical: "https://books-quotes.com" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   openGraph: {
     title: "Books Quotes – Personal Development Book Quotes & Summaries",
-    description: "Explore curated personal development book quotes and summaries from bestsellers. Transform your mindset with actionable insights from top authors.",
+    description: "Discover the most powerful quotes, key lessons, and practical tips from the best personal development books.",
     type: "website",
     url: "https://books-quotes.com",
+    siteName: "Books Quotes",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "Books Quotes – Personal Development Book Quotes & Summaries",
-    description: "Explore curated personal development book quotes and summaries from bestsellers.",
+    description: "Discover the most powerful quotes and practical tips from the best personal development books.",
+    site: "@booksquotes",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Books Quotes",
+  "url": "https://books-quotes.com",
+  "description": "Curated quotes, analysis and practical tips from the best personal development books.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://books-quotes.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 };
 
 export default function RootLayout({
@@ -40,6 +61,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {/* Google AdSense — remplace ca-pub-XXXXXXXXXX par ton Publisher ID */}
+        {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossOrigin="anonymous"></script> */}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
