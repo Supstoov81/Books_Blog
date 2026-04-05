@@ -32,7 +32,7 @@ export default function Home() {
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedBookId, setExpandedBookId] = useState<number | null>(null);
-  const [activeSection, setActiveSection] = useState<'books' | 'about' | 'contact'>('books');
+  const [activeSection, setActiveSection] = useState<'books' | 'about'>('books');
   const [showTips, setShowTips] = useState<number | null>(null);
 
   // Hardcoded tips
@@ -147,10 +147,10 @@ export default function Home() {
           <div className="flex justify-between items-center py-6">
             <h1 className="text-3xl font-bold text-gray-900">Books Quotes</h1>
             <nav className="flex space-x-6">
-              {['books','about','contact'].map(section => (
+              {(['books','about'] as const).map(section => (
                 <button
                   key={section}
-                  onClick={() => setActiveSection(section as 'books'|'about'|'contact')}
+                  onClick={() => setActiveSection(section)}
                   className={`text-lg font-semibold ${
                     activeSection === section ? 'text-blue-700' : 'text-gray-700'
                   } hover:underline`}
@@ -246,19 +246,19 @@ export default function Home() {
         )}
 
         {activeSection === 'about' && (
-          <div className="bg-white rounded-lg shadow-md p-8">
+          <div className="bg-white rounded-lg shadow-md p-8 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">About Books Quotes</h2>
             <p className="text-lg text-gray-700 mb-4">
-              Welcome to Books Quotes, your destination for powerful insights...
+              Books Quotes is a curated space for anyone who believes that the right words, at the right moment, can change everything.
             </p>
-          </div>
-        )}
-
-        {activeSection === 'contact' && (
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Us</h2>
             <p className="text-lg text-gray-700 mb-4">
-              Email us at: <a href="mailto:contact@books-quotes.com" className="text-blue-600 hover:underline">contact@books-quotes.com</a>
+              Each book featured here has been carefully selected for its impact — whether it rewires how you build habits, sharpens your mindset, deepens your relationships, or helps you navigate the complexity of modern life. We go beyond the surface: for every book, you&apos;ll find key quotes organized by theme, an in-depth analysis, and 10 practical tips you can apply starting today.
+            </p>
+            <p className="text-lg text-gray-700 mb-4">
+              The goal is simple: make the best ideas from the best books immediately actionable. No fluff, no summaries — just the essence, distilled.
+            </p>
+            <p className="text-lg text-gray-700">
+              Whether you&apos;re discovering a book for the first time or revisiting one that marked you, Books Quotes is your companion for turning reading into real transformation.
             </p>
           </div>
         )}
