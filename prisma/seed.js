@@ -364,6 +364,77 @@ async function main() {
           category: 'Leadership'
         }
       ]
+    },
+    {
+      title: 'The Daily Stoic',
+      author: 'Ryan Holiday',
+      coverImage: '/images/the-daily-stoic.jpg',
+      rating: 5,
+      description: '366 meditations on wisdom, perseverance, and the art of living, drawing from the greatest Stoic philosophers.',
+      analysis: 'The Daily Stoic by Ryan Holiday and Stephen Hanselman is a collection of 366 daily meditations drawn from the writings of Stoic philosophers such as Marcus Aurelius, Epictetus, and Seneca. Each entry features a translated passage followed by a modern interpretation that makes ancient wisdom immediately applicable to contemporary life. The book is organized around three Stoic disciplines: perception (how we see the world), action (what we do), and will (how we endure). Holiday argues that Stoicism is not a philosophy of passive resignation but one of active engagement — teaching us to focus only on what we can control, accept what we cannot, and act virtuously regardless of circumstances. The Daily Stoic has introduced millions of modern readers to one of history\'s most practical philosophies, proving that principles developed 2,000 years ago are as relevant today as ever for building resilience, clarity, and purposeful action.',
+      amazonLink: 'https://www.amazon.com/dp/0735211736/?tag=moncodeaff',
+      quotes: [
+        {
+          text: 'The obstacle is the way.',
+          context: 'On turning adversity into advantage',
+          themes: 'obstacles, resilience, growth',
+          category: 'Resilience'
+        },
+        {
+          text: 'You have power over your mind, not outside events. Realize this, and you will find strength.',
+          context: 'Marcus Aurelius on the locus of control',
+          themes: 'control, mindset, inner strength',
+          category: 'Control & Perception'
+        },
+        {
+          text: 'Waste no more time arguing about what a good man should be. Be one.',
+          context: 'Marcus Aurelius on action over debate',
+          themes: 'action, virtue, integrity',
+          category: 'Virtue & Action'
+        },
+        {
+          text: 'He who fears death will never do anything worthy of a man who is alive.',
+          context: 'Seneca on fear and courage',
+          themes: 'fear, courage, life',
+          category: 'Courage'
+        },
+        {
+          text: 'Make the best use of what is in your power, and take the rest as it happens.',
+          context: 'Epictetus on focus and acceptance',
+          themes: 'focus, acceptance, wisdom',
+          category: 'Control & Perception'
+        },
+        {
+          text: 'Seek not the good in external things; seek it in yourself.',
+          context: 'Epictetus on inner virtue',
+          themes: 'virtue, self-reliance, inner peace',
+          category: 'Virtue & Action'
+        },
+        {
+          text: 'No man is free who is not master of himself.',
+          context: 'Epictetus on self-discipline',
+          themes: 'freedom, self-discipline, mastery',
+          category: 'Discipline'
+        },
+        {
+          text: 'It is not death that a man should fear, but he should fear never beginning to live.',
+          context: 'Marcus Aurelius on living fully',
+          themes: 'life, purpose, fear',
+          category: 'Courage'
+        },
+        {
+          text: 'Difficulties strengthen the mind, as labor does the body.',
+          context: 'Seneca on adversity as training',
+          themes: 'adversity, strength, growth',
+          category: 'Resilience'
+        },
+        {
+          text: 'First say to yourself what you would be; and then do what you have to do.',
+          context: 'Epictetus on identity and action',
+          themes: 'identity, purpose, action',
+          category: 'Discipline'
+        }
+      ]
     }
   ];
 

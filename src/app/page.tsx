@@ -73,6 +73,18 @@ export default function Home() {
       'Practice self-discipline daily...',
       'Focus on what you can control...'
     ],
+    'The Daily Stoic': [
+      'Start each morning with a Stoic meditation — ask yourself what is in your control today.',
+      'Practice negative visualization: briefly imagine losing what you value to appreciate it more.',
+      'When facing an obstacle, ask "How can I use this?" instead of "Why is this happening to me?"',
+      'Distinguish between what depends on you (opinions, actions) and what does not (others, outcomes).',
+      'Journal every evening: what did you do well? What could you improve?',
+      'Respond to anger or frustration with a pause — reason, not impulse, should guide your actions.',
+      'Live according to your values, not the approval of others.',
+      'Treat setbacks as training exercises that build mental strength.',
+      'Memento mori — remember you are mortal. Use it to prioritize what truly matters.',
+      'Act for the common good: consider how your actions affect those around you.'
+    ],
     'How to Win Friends and Influence People': [
       'Show genuine interest in others — ask about their lives and listen attentively.',
       'Smile sincerely; a warm smile signals openness and goodwill.',
