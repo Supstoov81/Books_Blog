@@ -202,7 +202,7 @@ export default function Home() {
                 {showTips === book.id && bookTips[book.title] && (
                   <div className="mt-6 p-4 bg-purple-50 rounded-lg">
                     <h3 className="text-xl font-bold text-purple-800 mb-4">
-                      10 Practical Tips from "{book.title}"
+                      10 Practical Tips from &ldquo;{book.title}&rdquo;
                     </h3>
                     <ol className="list-decimal list-inside space-y-2">
                       {bookTips[book.title].map((tip, i) => (
@@ -220,7 +220,7 @@ export default function Home() {
                         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                           {quotes.map(q => (
                             <div key={q.id} className="bg-gray-50 p-4 rounded-lg">
-                              <p className="text-gray-800 italic">"{q.text}"</p>
+                              <p className="text-gray-800 italic">&ldquo;{q.text}&rdquo;</p>
                             </div>
                           ))}
                         </div>
