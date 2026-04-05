@@ -1,268 +1,139 @@
-// Trigger redeploy: fix chunk loading issue
-'use client';
+import { prisma } from '@/lib/prisma';
+import Link from 'next/link';
+import BookCard from '@/components/BookCard';
+import { bookTips } from '@/lib/tips';
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+export const revalidate = 3600;
 
-// Pour Node 15, côté serveur fetch peut nécessiter node-fetch
-// Si tu appelles /api/books côté client, pas besoin, sinon pour serveur:
-// import fetch from 'node-fetch';
+export default async function Home() {
+  const books = await prisma.book.findMany({
+    include: { quotes: true },
+    orderBy: { id: 'asc' },
+  });
 
-interface Quote {
-  id: number;
-  text: string;
-  context: string;
-  themes: string;
-  category: string;
-}
-
-interface Book {
-  id: number;
-  title: string;
-  author: string;
-  coverImage: string;
-  rating: number;
-  description: string;
-  analysis: string;
-  amazonLink: string;
-  quotes: Quote[];
-}
-
-export default function Home() {
-  const [books, setBooks] = useState<Book[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [expandedBookId, setExpandedBookId] = useState<number | null>(null);
-  const [activeSection, setActiveSection] = useState<'books' | 'about'>('books');
-  const [showTips, setShowTips] = useState<number | null>(null);
-
-  // Hardcoded tips
-  const bookTips: Record<string, string[]> = {
-    'Atomic Habits': [
-      'Start with the 2-minute rule...',
-      'Use habit stacking...',
-      'Make good habits obvious...',
-      'Make bad habits invisible...',
-      'Use implementation intentions...',
-      'Track your habits...',
-      'Never miss twice...',
-      'Focus on identity change...',
-      'Use temptation bundling...',
-      'Make habits satisfying...'
-    ],
-    'Power': [
-      'Master your emotions...',
-      'Control information...',
-      'Build a network of allies...',
-      'Study your opponents...',
-      'Use timing to your advantage...',
-      'Create dependency...',
-      'Use flattery strategically...',
-      'Avoid unnecessary conflicts...',
-      'Maintain mystery...',
-      'Always have a backup plan...'
-    ],
-    "Can't Hurt Me": [
-      'Use the 40% rule...',
-      'Embrace discomfort...',
-      'Practice the accountability mirror...',
-      'Develop a calloused mind...',
-      'Stop making excuses...',
-      'Push through when you want to quit...',
-      'Create a new identity...',
-      'Use pain as fuel...',
-      'Practice self-discipline daily...',
-      'Focus on what you can control...'
-    ],
-    'The Daily Stoic': [
-      'Start each morning with a Stoic meditation — ask yourself what is in your control today.',
-      'Practice negative visualization: briefly imagine losing what you value to appreciate it more.',
-      'When facing an obstacle, ask "How can I use this?" instead of "Why is this happening to me?"',
-      'Distinguish between what depends on you (opinions, actions) and what does not (others, outcomes).',
-      'Journal every evening: what did you do well? What could you improve?',
-      'Respond to anger or frustration with a pause — reason, not impulse, should guide your actions.',
-      'Live according to your values, not the approval of others.',
-      'Treat setbacks as training exercises that build mental strength.',
-      'Memento mori — remember you are mortal. Use it to prioritize what truly matters.',
-      'Act for the common good: consider how your actions affect those around you.'
-    ],
-    'How to Win Friends and Influence People': [
-      'Show genuine interest in others — ask about their lives and listen attentively.',
-      'Smile sincerely; a warm smile signals openness and goodwill.',
-      "Remember people's names — it's the sweetest sound to them.",
-      'Be a great listener; encourage others to talk about themselves.',
-      'Talk in terms of the other person\'s interests, not your own.',
-      'Make the other person feel important — and do it sincerely.',
-      'Avoid criticism and condemnation; replace them with understanding.',
-      'Give honest and sincere appreciation, not flattery.',
-      'When you\'re wrong, admit it quickly and emphatically.',
-      'Let the other person feel the idea is theirs — it boosts buy-in and goodwill.'
-    ]
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Best Personal Development Books — Quotes & Analysis',
+    description: 'Curated quotes, in-depth analysis and 10 actionable tips for the best personal development books.',
+    url: 'https://books-quotes.com',
+    itemListElement: books.map((book, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `https://books-quotes.com/books/${book.id}`,
+      name: book.title,
+    })),
   };
-
-  useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const response = await fetch('/api/books');
-        if (!response.ok) throw new Error('Failed to fetch books');
-        const data = await response.json();
-        setBooks(data);
-      } catch (error) {
-        console.error('Error fetching books:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchBooks();
-  }, []);
-
-  const toggleQuotes = (bookId: number) => {
-    setExpandedBookId(expandedBookId === bookId ? null : bookId);
-  };
-
-  const toggleTips = (bookId: number) => {
-    setShowTips(showTips === bookId ? null : bookId);
-  };
-
-  const groupQuotesByCategory = (quotes: Quote[]) => {
-    return quotes.reduce<Record<string, Quote[]>>((acc, quote) => {
-      acc[quote.category] = acc[quote.category] || [];
-      acc[quote.category].push(quote);
-      return acc;
-    }, {});
-  };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-xl text-gray-600">Loading...</div>
-      </div>
-    );
-  }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <h1 className="text-3xl font-bold text-gray-900">Books Quotes</h1>
-            <nav className="flex space-x-6">
-              {(['books','about'] as const).map(section => (
-                <button
-                  key={section}
-                  onClick={() => setActiveSection(section)}
-                  className={`text-lg font-semibold ${
-                    activeSection === section ? 'text-blue-700' : 'text-gray-700'
-                  } hover:underline`}
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </button>
-              ))}
-            </nav>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <div className="min-h-screen bg-slate-50">
+        {/* Header */}
+        <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <Link href="/" className="text-xl font-extrabold text-slate-900 tracking-tight">
+                Books<span className="text-blue-600">Quotes</span>
+              </Link>
+              <nav className="flex items-center gap-6">
+                <a href="#books" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">Books</a>
+                <a href="#about" className="text-sm font-semibold text-slate-600 hover:text-blue-600 transition-colors">About</a>
+              </nav>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      {/* Main */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {activeSection === 'books' && (
-          <div className="space-y-8">
+        {/* Hero */}
+        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white py-20 px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
+              Personal Development · Quotes · Summaries · Tips
+            </p>
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+              The Best Self-Improvement Books —<br className="hidden md:block" />
+              <span className="text-yellow-400">Quotes, Tips & Analysis</span>
+            </h1>
+            <p className="text-lg text-slate-300 mb-8 max-w-xl mx-auto leading-relaxed">
+              We distil the most impactful ideas from the world&apos;s best personal development books
+              into curated quotes, in-depth analyses, and 10 actionable tips per book.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              {[`${books.length} Books`, `${books.reduce((s, b) => s + b.quotes.length, 0)}+ Quotes`, '50 Actionable Tips'].map(stat => (
+                <span key={stat} className="bg-white/10 backdrop-blur border border-white/20 rounded-full px-4 py-1.5 text-sm font-semibold text-white">
+                  {stat}
+                </span>
+              ))}
+            </div>
+            <a
+              href="#books"
+              className="inline-block bg-yellow-400 text-slate-900 font-bold px-8 py-3 rounded-xl hover:bg-yellow-300 transition-colors text-lg shadow-lg"
+            >
+              Explore the Books ↓
+            </a>
+          </div>
+        </section>
+
+        {/* Books */}
+        <main id="books" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          <div className="flex items-baseline justify-between mb-8">
+            <h2 className="text-2xl font-bold text-slate-900">Featured Books</h2>
+            <p className="text-sm text-slate-500">{books.length} books · updated regularly</p>
+          </div>
+
+          <div className="space-y-6">
             {books.map(book => (
-              <div key={book.id} className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-start space-x-6">
-                  <Image
-                    src={book.coverImage}
-                    alt={book.title}
-                    width={120}
-                    height={160}
-                    className="rounded-lg shadow-md"
-                  />
-                  <div className="flex-1">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-2">{book.title}</h2>
-                    <p className="text-lg text-gray-600 mb-2">by {book.author}</p>
-                    <div className="flex items-center mb-4">
-                      {[...Array(book.rating)].map((_, i) => (
-                        <span key={i} className="text-yellow-400">★</span>
-                      ))}
-                    </div>
-                    <p className="text-gray-700 mb-4">{book.description}</p>
-                    <div className="flex space-x-4">
-                      <a
-                        href={book.amazonLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                      >
-                        Buy on Amazon
-                      </a>
-                      <button
-                        onClick={() => toggleQuotes(book.id)}
-                        className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
-                      >
-                        {expandedBookId === book.id ? 'Hide Quotes' : 'Show Quotes'}
-                      </button>
-                      <button
-                        onClick={() => toggleTips(book.id)}
-                        className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
-                      >
-                        {showTips === book.id ? 'Hide Tips' : 'Show Tips'}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {showTips === book.id && bookTips[book.title] && (
-                  <div className="mt-6 p-4 bg-purple-50 rounded-lg">
-                    <h3 className="text-xl font-bold text-purple-800 mb-4">
-                      10 Practical Tips from &ldquo;{book.title}&rdquo;
-                    </h3>
-                    <ol className="list-decimal list-inside space-y-2">
-                      {bookTips[book.title].map((tip, i) => (
-                        <li key={i} className="text-gray-700 leading-relaxed">{tip}</li>
-                      ))}
-                    </ol>
-                  </div>
-                )}
-
-                {expandedBookId === book.id && (
-                  <div className="mt-6">
-                    {Object.entries(groupQuotesByCategory(book.quotes)).map(([category, quotes]) => (
-                      <div key={category} className="mb-6">
-                        <h3 className="text-xl font-bold text-gray-900 mb-4">{category}</h3>
-                        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                          {quotes.map(q => (
-                            <div key={q.id} className="bg-gray-50 p-4 rounded-lg">
-                              <p className="text-gray-800 italic">&ldquo;{q.text}&rdquo;</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <BookCard
+                key={book.id}
+                id={book.id}
+                title={book.title}
+                author={book.author}
+                coverImage={book.coverImage}
+                rating={book.rating}
+                description={book.description}
+                amazonLink={book.amazonLink}
+                quotes={book.quotes}
+                tips={bookTips[book.title] ?? []}
+              />
             ))}
           </div>
-        )}
+        </main>
 
-        {activeSection === 'about' && (
-          <div className="bg-white rounded-lg shadow-md p-8 max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">About Books Quotes</h2>
-            <p className="text-lg text-gray-700 mb-4">
-              Books Quotes is a curated space for anyone who believes that the right words, at the right moment, can change everything.
+        {/* About */}
+        <section id="about" className="bg-white border-t border-slate-200 py-16 px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">About Books Quotes</h2>
+            <p className="text-lg text-slate-700 mb-4 leading-relaxed">
+              <strong>Books Quotes</strong> is a curated space for anyone who believes that the right words, at the right moment, can change everything.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
-              Each book featured here has been carefully selected for its impact — whether it rewires how you build habits, sharpens your mindset, deepens your relationships, or helps you navigate the complexity of modern life. We go beyond the surface: for every book, you&apos;ll find key quotes organized by theme, an in-depth analysis, and 10 practical tips you can apply starting today.
+            <p className="text-lg text-slate-700 mb-4 leading-relaxed">
+              Each book featured here has been hand-picked for its proven impact — whether it rewires how you build habits, sharpens your ability to influence others, deepens your resilience, or helps you develop a Stoic mindset for everyday challenges.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
-              The goal is simple: make the best ideas from the best books immediately actionable. No fluff, no summaries — just the essence, distilled.
+            <p className="text-lg text-slate-700 mb-4 leading-relaxed">
+              For every book you&apos;ll find: <strong>themed quotes</strong> pulled from the most impactful passages, an <strong>in-depth analysis</strong> that goes beyond the surface, and <strong>10 practical tips</strong> you can start applying today — no fluff, no padding.
             </p>
-            <p className="text-lg text-gray-700">
-              Whether you&apos;re discovering a book for the first time or revisiting one that marked you, Books Quotes is your companion for turning reading into real transformation.
+            <p className="text-lg text-slate-700 leading-relaxed">
+              The goal is simple: turn reading into transformation. Whether you&apos;re discovering a book for the first time or returning to one that changed your life, Books Quotes gives you the tools to extract maximum value from the world&apos;s best ideas.
+            </p>
+            <p className="text-xs text-slate-400 mt-8 leading-relaxed">
+              <em>Affiliate disclosure: Some links on this site are Amazon affiliate links. As an Amazon Associate, we earn a small commission from qualifying purchases at no extra cost to you. This helps us keep the site free and updated.</em>
             </p>
           </div>
-        )}
-      </main>
-    </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm">
+          <p className="mb-2">
+            <Link href="/" className="text-white font-bold">BooksQuotes</Link>
+            {' '}· Personal development book quotes, summaries & tips
+          </p>
+          <p>© {new Date().getFullYear()} Books Quotes · <a href="https://books-quotes.com/sitemap.xml" className="hover:text-white">Sitemap</a></p>
+        </footer>
+      </div>
+    </>
   );
 }
