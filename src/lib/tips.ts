@@ -63,6 +63,19 @@ export const bookTips: Record<string, string[]> = {
     'Study social dynamics and human psychology dispassionately: understanding how incentives, status, and biology shape behaviour removes bitterness and replaces it with strategic clarity.',
     'Build financial independence as a non-negotiable foundation: economic dependence in any relationship inverts the power dynamic. Control your income, your expenses, and your long-term security.',
   ],
+  'How Bad Do You Want It?': [
+    'Train your perception of effort, not just your body: the real limit in endurance is how hard an effort feels, not your muscles or lungs. Deliberately practise tolerating high perceived effort in training so it feels manageable in races.',
+    'Use psyching-up techniques before hard efforts: a short, high-intensity self-talk routine, a power pose, or a motivational cue 30 seconds before a hard interval shifts your brain into a higher performance state.',
+    'Develop a coping focus during suffering: instead of trying to distract yourself from pain, confront it directly with a plan — "this is hard and I am handling it." Athletes who cope outperform those who dissociate when effort peaks.',
+    'Set process goals during competition, not outcome goals: focus entirely on controllable actions (cadence, form, breathing) rather than position or time. Process focus prevents panic and keeps performance stable under pressure.',
+    'Build mental fitness through deliberate discomfort: add one workout per week that you intentionally do not want to do. The discomfort of doing it anyway is the training stimulus for mental toughness — not inspiration.',
+    'Use the "10% more" rule when you want to quit: when your brain signals stop, ask whether you can give 10% more effort for just the next 30 seconds. Almost always the answer is yes — and that habit compounds into race-changing resilience.',
+    'Practise emotional regulation, not emotional suppression: acknowledge fear, doubt, or pain without letting it dictate your pace. Name the feeling ("I feel terrible right now") and continue — naming reduces its power over behaviour.',
+    'Study elite athletes not for their training plans but for their psychological responses: notice how champions reframe setbacks mid-race, slow down briefly to recalibrate, and make tactical decisions under exhaustion. Imitate the mindset, not just the mileage.',
+    'Harness the power of competition and presence of others: train occasionally in groups or races even when solo training is easier. The brain lifts performance automatically in the presence of rivals — use this biological fact intentionally.',
+    'Recover your motivation after a bad race by conducting a cold after-action review: separate what was physical, what was tactical, and what was psychological. Most bad races have a mental turning point — identify it precisely so you can rehearse a different response next time.',
+  ],
+
   'How to Win Friends and Influence People': [
     'Show deep, genuine interest in others: ask about their work, their family, their passions — and listen more than you speak. People are won over by those who make them feel interesting, not those who are interesting themselves.',
     'Smile sincerely and consistently: a real smile signals warmth, safety, and goodwill. It is one of the cheapest and most powerful social investments you can make in any interaction.',
