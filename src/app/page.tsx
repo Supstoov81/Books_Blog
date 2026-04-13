@@ -103,35 +103,40 @@ export default async function Home() {
           </div>
         </main>
 
-        {/* About */}
-        <section id="about" className="bg-white border-t border-slate-200 py-16 px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">About Books Quotes</h2>
-            <p className="text-lg text-slate-700 mb-4 leading-relaxed">
-              <strong>Books Quotes</strong> is a curated space for anyone who believes that the right words, at the right moment, can change everything.
-            </p>
-            <p className="text-lg text-slate-700 mb-4 leading-relaxed">
-              Each book featured here has been hand-picked for its proven impact — whether it rewires how you build habits, sharpens your ability to influence others, deepens your resilience, or helps you develop a Stoic mindset for everyday challenges.
-            </p>
-            <p className="text-lg text-slate-700 mb-4 leading-relaxed">
-              For every book you&apos;ll find: <strong>themed quotes</strong> pulled from the most impactful passages, an <strong>in-depth analysis</strong> that goes beyond the surface, and <strong>10 practical tips</strong> you can start applying today — no fluff, no padding.
-            </p>
-            <p className="text-lg text-slate-700 leading-relaxed">
-              The goal is simple: turn reading into transformation. Whether you&apos;re discovering a book for the first time or returning to one that changed your life, Books Quotes gives you the tools to extract maximum value from the world&apos;s best ideas.
-            </p>
-            <p className="text-xs text-slate-400 mt-8 leading-relaxed">
-              <em>Affiliate disclosure: Some links on this site are Amazon affiliate links. As an Amazon Associate, we earn a small commission from qualifying purchases at no extra cost to you. This helps us keep the site free and updated.</em>
-            </p>
-          </div>
-        </section>
-
         {/* Footer */}
-        <footer className="bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm">
-          <p className="mb-2">
-            <Link href="/" className="text-white font-bold">BooksQuotes</Link>
-            {' '}· Personal development book quotes, summaries & tips
-          </p>
-          <p>© {new Date().getFullYear()} Books Quotes · <a href="https://books-quotes.com/sitemap.xml" className="hover:text-white">Sitemap</a></p>
+        <footer className="bg-slate-900 text-white py-12 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+              {/* Brand */}
+              <div>
+                <Link href="/" className="text-xl font-extrabold tracking-tight">
+                  Books<span className="text-yellow-400">Quotes</span>
+                </Link>
+                <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                  Curated quotes, in-depth analysis and actionable tips from the world&apos;s best personal development books.
+                </p>
+              </div>
+              {/* Links */}
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-4">Explore</h3>
+                <ul className="space-y-2 text-sm text-slate-300">
+                  <li><a href="#books" className="hover:text-yellow-400 transition-colors">All Books</a></li>
+                  <li><a href="https://books-quotes.com/sitemap.xml" className="hover:text-yellow-400 transition-colors">Sitemap</a></li>
+                </ul>
+              </div>
+              {/* Legal */}
+              <div>
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-4">Legal</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Some links are Amazon affiliate links. As an Amazon Associate, we earn a small commission from qualifying purchases at no extra cost to you.
+                </p>
+              </div>
+            </div>
+            <div className="border-t border-slate-700 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+              <p>© {new Date().getFullYear()} BooksQuotes · All rights reserved.</p>
+              <p>Personal development · Quotes · Analysis · Tips</p>
+            </div>
+          </div>
         </footer>
       </div>
     </>
