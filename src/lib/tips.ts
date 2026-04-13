@@ -51,6 +51,18 @@ export const bookTips: Record<string, string[]> = {
     'Act for the common good: before any significant decision, ask how it affects the people around you. The Stoics believed virtue was inseparable from service to others and to community.',
   ],
 
+  'The Rational Male': [
+    'Understand the concept of sexual market value (SMV): your attractiveness is not fixed — it is built through fitness, status, skills, and confidence. Invest in all four consistently.',
+    'Stop seeking external validation from women or from society: a man who needs approval signals low status. Develop your mission, your frame, and your standards independently.',
+    'Maintain your frame in all relationships: your values, your reality, and your boundaries must be the foundation of every interaction. A man who loses his frame loses his respect.',
+    'Embrace continuous self-improvement as a lifestyle, not a phase: the gym, reading, building income streams, and developing social skills are permanent pursuits, not temporary fixes to impress someone.',
+    'Understand the nature of long-term attraction: comfort and familiarity alone do not sustain it. Maintain mystery, pursue your goals, and keep growing — stagnation is the enemy of attraction.',
+    'Set and enforce clear boundaries without apology: know what you will and will not tolerate, communicate it once, and act accordingly. Boundaries respected signal strength; boundaries negotiated signal weakness.',
+    'Develop an abundance mindset: scarcity thinking (fear of losing one option) leads to poor decisions. When you are building your life fully, no single outcome carries existential weight.',
+    'Invest in your purpose above all else: a man with a mission is inherently more attractive and more fulfilled. Your work, your goals, and your legacy come before any relationship.',
+    'Study social dynamics and human psychology dispassionately: understanding how incentives, status, and biology shape behaviour removes bitterness and replaces it with strategic clarity.',
+    'Build financial independence as a non-negotiable foundation: economic dependence in any relationship inverts the power dynamic. Control your income, your expenses, and your long-term security.',
+  ],
   'How to Win Friends and Influence People': [
     'Show deep, genuine interest in others: ask about their work, their family, their passions — and listen more than you speak. People are won over by those who make them feel interesting, not those who are interesting themselves.',
     'Smile sincerely and consistently: a real smile signals warmth, safety, and goodwill. It is one of the cheapest and most powerful social investments you can make in any interaction.',
