@@ -16,18 +16,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Books Quotes – Personal Development Book Quotes & Summaries",
+    default: "Books Quotes – Best Personal Development Books: Quotes, Tips & Summaries",
     template: "%s | Books Quotes",
   },
-  description: "Discover the most powerful quotes, key lessons, and practical tips from the best personal development books. Atomic Habits, The Daily Stoic, How to Win Friends, and more.",
-  keywords: "personal development books, book quotes, book summaries, Atomic Habits, The Daily Stoic, How to Win Friends, Power, Can't Hurt Me, self-improvement, motivation, success mindset, book tips",
+  description: "Curated quotes, 10 actionable tips and in-depth analysis for the best personal development books: Atomic Habits, Rich Dad Poor Dad, The Daily Stoic, How to Win Friends, Can't Hurt Me, Die with Zero, and more.",
+  keywords: "personal development books, book quotes, book summaries, Atomic Habits, The Daily Stoic, How to Win Friends and Influence People, 48 Laws of Power, Can't Hurt Me, Rich Dad Poor Dad, Die with Zero, The Rational Male, Book of Pook, How Bad Do You Want It, self-improvement books, motivation quotes, success mindset, book tips, book analysis, best books to read",
   authors: [{ name: "Books Quotes" }],
   metadataBase: new URL("https://books-quotes.com"),
   alternates: { canonical: "https://books-quotes.com" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large", "max-video-preview": -1 } },
   openGraph: {
-    title: "Books Quotes – Personal Development Book Quotes & Summaries",
-    description: "Discover the most powerful quotes, key lessons, and practical tips from the best personal development books.",
+    title: "Books Quotes – Best Personal Development Books: Quotes, Tips & Summaries",
+    description: "Curated quotes, 10 actionable tips and in-depth analysis for the best personal development books: Atomic Habits, Rich Dad Poor Dad, The Daily Stoic, and more.",
     type: "website",
     url: "https://books-quotes.com",
     siteName: "Books Quotes",
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Books Quotes – Personal Development Book Quotes & Summaries",
-    description: "Discover the most powerful quotes and practical tips from the best personal development books.",
+    title: "Books Quotes – Best Personal Development Books: Quotes, Tips & Summaries",
+    description: "Curated quotes, 10 actionable tips and in-depth analysis for the best personal development books.",
     site: "@booksquotes",
   },
 };
