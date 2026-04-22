@@ -63,6 +63,19 @@ export const bookTips: Record<string, string[]> = {
     'Study social dynamics and human psychology dispassionately: understanding how incentives, status, and biology shape behaviour removes bitterness and replaces it with strategic clarity.',
     'Build financial independence as a non-negotiable foundation: economic dependence in any relationship inverts the power dynamic. Control your income, your expenses, and your long-term security.',
   ],
+  'Die with Zero': [
+    'Calculate your "life energy" per activity: estimate how much real enjoyment each recurring expense gives you relative to its cost. Cut ruthlessly what scores low and spend boldly on what scores high — experiences, not objects, dominate the top of this list.',
+    'Time-bucket your life now: divide your remaining years into 5-year windows and write down what experiences belong in each one. Hiking belongs in your 30s, not your 70s. Waiting until "retirement" is often waiting until the experience is no longer physically or emotionally possible.',
+    'Spend on experiences during your peak health years (roughly 30–60): your capacity to enjoy, travel, and engage fully is highest in these decades. Money spent on experiences at 45 delivers far more life value than the same money spent at 75.',
+    'Give money to people while they can use it: if you plan to leave an inheritance, give it when recipients are in their 30s or 40s and can transform it into life experiences — not at the end when they are already financially established.',
+    'Stop letting fear of the unknown make you hoard: most retirees consistently underspend because of anxiety about future costs. Model your actual spending needs with a financial planner. Evidence shows most people die with far more than they needed.',
+    'Invest in memory dividends: experiences do not end when they end — they generate recurring returns in the form of memories, stories, and identity. A great trip at 35 pays emotional dividends for 40 years. A saved amount in a bank account pays nothing until spent.',
+    'Use the rule of diminishing marginal utility for money: beyond a certain point (research suggests around $100K–$200K annual income), more money adds almost nothing to daily happiness. Optimise for experiences and time, not for accumulating beyond your real needs.',
+    'Audit your deferred life plan: list all the things you are "saving for later." For each one, ask honestly: will I be able to enjoy this at 70 the same way I could at 45? If not, find a way to do it sooner — even a smaller version of it.',
+    'Think in terms of net fulfilment, not net worth: the goal is to extract maximum life value from every dollar and year you have. Dying with a large estate is not financial success — it is evidence of unlived experiences and unmade memories.',
+    'Schedule your peak experiences deliberately: do not wait for the right moment; it will not come spontaneously. Book the trip, plan the sabbatical, set the date. Experiences that remain in the "someday" category reliably never happen.',
+  ],
+
   'The Book of Pook': [
     'Become, do not try to attract: stop performing for approval and focus entirely on becoming the man you want to be. Attraction is a natural by-product of genuine self-development — it cannot be manufactured through tactics alone.',
     'Kill the "nice guy" inside you: niceness used as a strategy to gain approval is not kindness — it is manipulation and it repels. Be direct, have opinions, disagree when you disagree. Authentic self-expression is more attractive than accommodating behaviour.',
