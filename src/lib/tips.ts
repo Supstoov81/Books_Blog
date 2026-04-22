@@ -63,6 +63,19 @@ export const bookTips: Record<string, string[]> = {
     'Study social dynamics and human psychology dispassionately: understanding how incentives, status, and biology shape behaviour removes bitterness and replaces it with strategic clarity.',
     'Build financial independence as a non-negotiable foundation: economic dependence in any relationship inverts the power dynamic. Control your income, your expenses, and your long-term security.',
   ],
+  'The Book of Pook': [
+    'Become, do not try to attract: stop performing for approval and focus entirely on becoming the man you want to be. Attraction is a natural by-product of genuine self-development — it cannot be manufactured through tactics alone.',
+    'Kill the "nice guy" inside you: niceness used as a strategy to gain approval is not kindness — it is manipulation and it repels. Be direct, have opinions, disagree when you disagree. Authentic self-expression is more attractive than accommodating behaviour.',
+    'Develop your purpose above all else: a man with a clear mission — a business, a craft, a cause — is intrinsically more compelling than one who makes a woman his primary focus. Let your purpose drive your life; let relationships be a complement, not the centre.',
+    'Understand that women respond to who you are, not what you say: no line or technique substitutes for genuine confidence, status, and self-assurance. Invest your energy in building those qualities rather than in memorising scripts.',
+    'Embrace rejection and failure as calibration: every "no" gives you feedback. Men who fear rejection become stagnant. Men who treat rejection as data keep improving. Make action a habit and let results inform you without defining you.',
+    'Develop an abundant mentality: scarcity thinking — acting as if this woman is your last chance — telegraphs low value instantly. Cultivate options, invest in yourself, and approach any one interaction without desperation.',
+    'Do not place women on a pedestal: idealising a woman before knowing her distorts your perception and creates neediness. See people clearly, as they are. Respect is earned through observation, not granted by default because of attraction.',
+    'Lead in all things: plan the date, make the decision, set the frame. Not through domination, but through clarity and confidence. Men who wait for permission or seek constant approval signal low self-worth.',
+    'Manage your emotions — do not suppress them: emotional volatility driven by a woman\'s behaviour signals that her approval controls you. Develop equanimity. Your emotional state should come from your values, not from external validation.',
+    'Build yourself into someone you respect: the ultimate principle — become a man you are proud of independently of any relationship outcome. Physical fitness, financial autonomy, social competence, and personal integrity are not tools of seduction; they are the foundation of a meaningful life.',
+  ],
+
   'How Bad Do You Want It?': [
     'Train your perception of effort, not just your body: the real limit in endurance is how hard an effort feels, not your muscles or lungs. Deliberately practise tolerating high perceived effort in training so it feels manageable in races.',
     'Use psyching-up techniques before hard efforts: a short, high-intensity self-talk routine, a power pose, or a motivational cue 30 seconds before a hard interval shifts your brain into a higher performance state.',
