@@ -63,6 +63,19 @@ export const bookTips: Record<string, string[]> = {
     'Study social dynamics and human psychology dispassionately: understanding how incentives, status, and biology shape behaviour removes bitterness and replaces it with strategic clarity.',
     'Build financial independence as a non-negotiable foundation: economic dependence in any relationship inverts the power dynamic. Control your income, your expenses, and your long-term security.',
   ],
+  'Rich Dad Poor Dad': [
+    'Pay yourself first: before paying bills or spending, automatically set aside a portion of every paycheck into savings or investments. This forces you to find ways to cover expenses rather than spending everything and saving nothing.',
+    'Understand the difference between assets and liabilities: an asset puts money in your pocket (rental income, dividends, business); a liability takes money out (car loan, mortgage on your home, credit card debt). The rich buy assets — focus your energy on acquiring them.',
+    'Make your money work for you: the goal is not to work for a salary your whole life but to build income streams that generate money while you sleep — investments, real estate, royalties, or a business that runs without you.',
+    'Develop financial literacy: learn to read a balance sheet, an income statement, and a cash flow statement. You cannot manage or grow what you cannot measure. Most schools teach nothing about money — educate yourself deliberately.',
+    'Use corporations and tax law to your advantage: the wealthy legally minimise taxes by earning through entities that allow deductions before paying tax. Understanding the basic structure of how businesses and investment vehicles are taxed is not optional for building wealth.',
+    'Your home is not an asset: it costs you money every month in mortgage, maintenance, insurance, and taxes. This does not mean never buy a home — but do not confuse it with an investment that generates income.',
+    'Mind your own business alongside your job: keep your day job for security, but spend your spare time and income building a real asset column — stocks, real estate, intellectual property. Your employer makes you rich; your assets make you wealthy.',
+    'Overcome fear of losing money: every wealthy person has lost money. The difference is they treat losses as tuition — information about what not to do next time. Paralysis from fear of loss guarantees you will never build wealth.',
+    'Think like an investor, not a consumer: before any purchase, ask whether it increases or decreases your net worth. Replace the consumer question "Can I afford it?" with the investor question "How can this generate a return?"',
+    'Choose your circle deliberately: you become the financial average of the five people you spend the most time with. Seek out people who think about money, investment, and business creation — their habits, language, and opportunities will influence yours.',
+  ],
+
   'Die with Zero': [
     'Calculate your "life energy" per activity: estimate how much real enjoyment each recurring expense gives you relative to its cost. Cut ruthlessly what scores low and spend boldly on what scores high — experiences, not objects, dominate the top of this list.',
     'Time-bucket your life now: divide your remaining years into 5-year windows and write down what experiences belong in each one. Hiking belongs in your 30s, not your 70s. Waiting until "retirement" is often waiting until the experience is no longer physically or emotionally possible.',
