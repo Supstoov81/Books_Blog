@@ -63,6 +63,19 @@ export const bookTips: Record<string, string[]> = {
     'Study social dynamics and human psychology dispassionately: understanding how incentives, status, and biology shape behaviour removes bitterness and replaces it with strategic clarity.',
     'Build financial independence as a non-negotiable foundation: economic dependence in any relationship inverts the power dynamic. Control your income, your expenses, and your long-term security.',
   ],
+  'The 4-Hour Workweek': [
+    'Apply the 80/20 rule ruthlessly to your work: identify the 20% of tasks that generate 80% of your results and eliminate or delegate everything else. Most busyness is just the feeling of productivity — not actual output. Cut the low-value 80% without guilt.',
+    'Use selective ignorance to protect your focus: unsubscribe from news, limit email checks to twice a day at fixed times, and stop attending meetings that have no clear agenda or decision to make. Information overload is a choice — choose to opt out.',
+    'Design your ideal lifestyle first, then build the work around it: Ferriss calls this "lifestyle design." Define precisely what your dream day, week, and location look like before you decide what income you need and how to generate it. Most people do it backwards.',
+    'Outsource your life with a virtual assistant: start by delegating one task per week to a VA — scheduling, research, inbox management. The goal is not just efficiency but the mental habit of letting go of tasks that do not require you specifically.',
+    'Create automated income streams (muses): build a product or service that sells and delivers without your constant involvement — a digital product, a niche e-commerce store, or a licensed information product. Test with a small ad budget before building anything.',
+    'Negotiate remote work before quitting: Ferriss\'s "remote work blueprint" — first become indispensable, then demonstrate productivity from home for one day, then use that data to negotiate full remote status. This works in most jobs before making a dramatic exit.',
+    'Take mini-retirements instead of deferring everything to old age: take one or two months off every year or two while you are still healthy and curious. Travel cheaply, live locally, and experience real life in another culture. This is infinitely more valuable than saving it all for 65.',
+    'Use fear-setting instead of goal-setting for big decisions: list the worst realistic outcomes of the action you are afraid to take. Then ask: how likely is each? How would you recover? Most feared outcomes are reversible — and the cost of inaction is always higher than imagined.',
+    'Validate any business idea with a real test before building it: create a simple landing page describing the product, run a small ad campaign, and measure actual interest before spending a euro on development. Most entrepreneurs build things nobody wants — test first.',
+    'Focus on being effective, not efficient: efficiency is doing things quickly; effectiveness is doing the right things. A busy schedule filled with low-value tasks is the opposite of success. Ask daily: "Am I inventing things to do to avoid the few things that actually matter?"',
+  ],
+
   'Success Mindsets': [
     'Audit your current mindsets before trying to change them: Gottfredson identifies four mindset dimensions — open vs. closed, growth vs. fixed, promotion vs. prevention, outward vs. inward. Take his free assessment at ryangottfredson.com to know exactly where you stand before trying to improve.',
     'Adopt an open mindset by actively seeking disconfirming evidence: when you hold a strong opinion, deliberately search for information that challenges it. People with closed mindsets only seek confirmation — people with open mindsets use contradiction as fuel for better thinking.',
